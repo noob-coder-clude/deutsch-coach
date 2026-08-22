@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#0D47A1"/>
+<title>Deutsch Coach · نسخهٔ ۲</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Vazirmatn',Tahoma,sans-serif}
+:root{
+  --p:#1565C0;--pd:#0D47A1;--pl:#E3F2FD;--pb:#BBDEFB;
+  --amber:#FFB300;--amberD:#E65100;
+  --ok:#2E9E44;--okbg:#E6F4E9;--bad:#E53935;
+  --bg:#EDF2F8;--ink:#17222E;--sub:#5A6B7D;--line:#E2E9F1;
+  --grad:linear-gradient(135deg,#1E88E5 0%,#0D47A1 100%);
+  --sh:0 4px 18px rgba(13,71,161,.09);--r:20px;
+}
+html,body{height:100%}
+body{background:#E4EBF4;overflow:hidden;color:var(--ink)}
+.hidden{display:none!important}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+::-webkit-scrollbar{display:none}
+
+/* ═══ صحنه و قاب موبایل ═══ */
+.stage{height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;gap:56px;padding:24px;
+  background:radial-gradient(900px 600px at 85% -10%,#D6E4F5 0%,transparent 60%),radial-gradient(700px 500px at 5% 110%,#DCE9F8 0%,transparent 55%),#E7EDF5}
+.device{width:min(400px,100vw);height:min(860px,94vh);background:#0B0F14;border-radius:48px;padding:10px;
+  box-shadow:0 40px 90px rgba(13,71,161,.28),0 10px 24px rgba(0,0,0,.18);position:relative}
+.screen{width:100%;height:100%;background:var(--bg);border-radius:38px;overflow:hidden;position:relative;display:flex;flex-direction:column}
+@media(max-width:980px){.snote{display:none}.stage{gap:0}}
+@media(max-width:560px){.stage{padding:0}.device{width:100vw;height:100vh;height:100dvh;border-radius:0;padding:0;box-shadow:none}.screen{border-radius:0}}
+
+.snote{max-width:300px}
+.snote h1{font-size:26px;font-weight:900;color:var(--pd);margin:14px 0 6px}
+.snote .snt{font-size:13px;color:var(--sub);line-height:2;margin-bottom:18px}
+.snote ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.snote li{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--ink)}
+.snote li .material-icons{font-size:19px;color:var(--p);background:var(--pl);border-radius:9px;padding:6px}
+.snote .snh{font-size:11px;color:#94A3B4;border-top:1px dashed var(--line);padding-top:14px;line-height:1.9}
+.sn-logo{width:64px;height:64px}
+
+/* ═══ نوار وضعیت ═══ */
+.sbar{height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;color:#fff;font-size:12.5px;font-weight:600;flex-shrink:0;position:relative;z-index:1}
+.sbar .material-icons{font-size:13px}
+.sicons{display:flex;gap:5px;align-items:center}
+
+/* ═══ خوش‌آمد ═══ */
+#welcome{position:absolute;inset:0;background:var(--grad);z-index:50;display:flex;flex-direction:column;color:#fff;overflow:hidden;transition:opacity .5s,transform .5s}
+#welcome::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07);top:-110px;left:-80px}
+#welcome::after{content:'';position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.05);bottom:-70px;right:-60px}
+#welcome.out{opacity:0;transform:scale(1.06);pointer-events:none}
+.w-in{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center;position:relative;z-index:1}
+.wlogo{width:104px;height:104px;border-radius:28px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);display:grid;place-items:center;backdrop-filter:blur(6px);box-shadow:0 18px 40px rgba(0,0,0,.25);margin-bottom:22px;animation:popin .7s cubic-bezier(.2,.9,.3,1.3)}
+.wlogo svg{width:68px;height:68px}
+@keyframes popin{from{transform:scale(.3);opacity:0}}
+.wname{font-size:27px;font-weight:900;animation:vin .6s .15s backwards}
+.wtag{font-size:13px;opacity:.92;margin:8px 0 28px;line-height:2;animation:vin .6s .25s backwards}
+.wfeat{display:flex;flex-direction:column;gap:10px;width:100%;max-width:300px;margin-bottom:30px;animation:vin .6s .35s backwards}
+.wf{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:11px 14px;font-size:12.5px;font-weight:600;text-align:right}
+.wf .material-icons{font-size:19px;color:#FFD54F}
+.wstart{background:#fff;color:var(--pd);border:none;border-radius:16px;padding:15px 46px;font-family:inherit;font-size:16.5px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;gap:9px;box-shadow:0 14px 30px rgba(0,0,0,.28);transition:.25s;animation:vin .6s .45s backwards}
+.wstart:hover{transform:translateY(-3px)}
+.wstart:active{transform:scale(.96)}
+.wfoot{position:relative;z-index:1;text-align:center;font-size:10.5px;opacity:.72;padding-bottom:16px}
+@keyframes vin{from{opacity:0;transform:translateY(16px)}}
+
+/* ═══ ساختار اپ ═══ */
+#app{display:flex;flex-direction:column;height:100%}
+.chrome{background:var(--grad);color:#fff;border-radius:0 0 28px 28px;position:relative;overflow:hidden;flex-shrink:0}
+.chrome::before{content:'';position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07);top:-120px;left:-60px}
+.chrome::after{content:'';position:absolute;width:170px;height:170px;border-radius:50%;background:rgba(255,255,255,.05);bottom:-100px;right:-50px}
+.appbar{display:flex;align-items:center;justify-content:space-between;padding:4px 20px 16px;position:relative;z-index:1}
+.ab-r{display:flex;align-items:center;gap:11px}
+.mini{width:36px;height:36px;border-radius:11px;overflow:hidden;flex-shrink:0;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.mini svg{width:100%;height:100%}
+.ab-title{font-size:19px;font-weight:800;line-height:1.2}
+.ab-sub{font-size:11px;opacity:.85}
+.ab-chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:6px 13px;border-radius:99px;font-size:12.5px;display:flex;align-items:center;gap:5px;font-weight:800}
+.ab-chip .material-icons{font-size:16px;color:#FFD54F}
+
+.views{flex:1;overflow-y:auto;padding:16px 16px 24px;scrollbar-width:none}
+.view{display:none}
+.view.on{display:block;animation:vin .4s cubic-bezier(.2,.7,.3,1)}
+
+.nav{flex-shrink:0;background:#fff;border-top:1px solid var(--line);display:flex;padding:8px 6px calc(10px + env(safe-area-inset-bottom));z-index:20}
+.nv{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px;border-radius:14px;cursor:pointer;color:#8A99AA;transition:.25s;user-select:none;overflow:hidden;position:relative}
+.nv .material-icons{font-size:24px;transition:.25s}
+.nv .lbl{font-size:10.5px;font-weight:700}
+.nv.on{color:var(--p);background:var(--pl)}
+.nv.on .material-icons{transform:translateY(-2px) scale(1.12)}
+
+/* ═══ اجزای عمومی ═══ */
+.card{background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:16px 18px;margin-bottom:14px}
+.cttl{display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:800;margin-bottom:12px}
+.cttl .ic{width:32px;height:32px;border-radius:10px;background:var(--pl);color:var(--p);display:grid;place-items:center;flex-shrink:0}
+.cttl .ic .material-icons{font-size:18px}
+.cnt{margin-inline-start:auto;background:var(--pl);color:var(--p);font-size:11px;font-weight:800;padding:4px 11px;border-radius:99px}
+.sub{color:var(--sub);font-size:12.5px;line-height:1.9}
+.btn{border:none;border-radius:13px;padding:10px 16px;font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:.2s;position:relative;overflow:hidden}
+.btn .material-icons{font-size:17px}
+.btn.pri{background:var(--grad);color:#fff;box-shadow:0 4px 12px rgba(13,71,161,.28)}
+.btn.gho{background:var(--pl);color:var(--pd)}
+.btn.gho2{background:#F1F5FA;color:var(--sub)}
+.btn:active{transform:scale(.96)}
+.btn:disabled{opacity:.45;pointer-events:none}
+.rip{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.5),rgba(255,255,255,0));pointer-events:none;animation:rip .6s ease-out forwards}
+@keyframes rip{from{transform:scale(0);opacity:.9}to{transform:scale(1);opacity:0}}
+
+/* ═══ تب مربی ═══ */
+.hero{background:var(--grad);border-radius:var(--r);color:#fff;padding:20px;display:flex;align-items:center;gap:14px;margin-bottom:14px;position:relative;overflow:hidden;box-shadow:0 10px 26px rgba(13,71,161,.25)}
+.hero::before{content:'';position:absolute;width:190px;height:190px;border-radius:50%;background:rgba(255,255,255,.08);top:-90px;left:-50px}
+.hero h2{font-size:19px;font-weight:900;position:relative}
+.hero .dt{font-size:11.5px;opacity:.85;margin:4px 0 9px}
+.hero p{font-size:12px;opacity:.92;line-height:1.9;position:relative}
+.ring{width:94px;height:94px;flex-shrink:0;position:relative}
+.ring svg{transform:rotate(-90deg)}
+.ring .rv{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .rv b{font-size:17px;font-weight:900}
+.ring .rv small{font-size:9px;opacity:.85}
+.pledge{background:linear-gradient(135deg,#FFF8E6,#FFEEC2);border:1px solid #FFE3A3;border-radius:var(--r);padding:16px 18px;margin-bottom:14px;position:relative}
+.pledge .pttl{display:flex;align-items:center;gap:9px;font-weight:800;color:var(--amberD);font-size:14.5px;margin-bottom:8px}
+.pledge .pttl .material-icons{font-size:20px}
+.pledge p{font-size:12.5px;color:#7A5A16;line-height:1.95}
+.stamp{position:absolute;top:12px;left:14px;border:2px dashed var(--amberD);color:var(--amberD);font-size:10.5px;font-weight:800;padding:5px 10px;border-radius:9px;transform:rotate(-8deg);background:rgba(255,255,255,.6)}
+.ckbar{height:8px;background:#EDF2F8;border-radius:99px;overflow:hidden;margin:4px 0 8px}
+.ckbar i{display:block;height:100%;width:0;background:var(--grad);border-radius:99px;transition:width .5s cubic-bezier(.2,.7,.3,1)}
+.ckitem{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px dashed var(--line);cursor:pointer}
+.ckitem:last-of-type{border-bottom:none}
+.ckbox{width:24px;height:24px;border-radius:8px;border:2px solid #C6D3E0;display:grid;place-items:center;color:#fff;transition:.25s;flex-shrink:0}
+.ckbox .material-icons{font-size:15px;opacity:0;transform:scale(.3);transition:.25s}
+.ckitem.done .ckbox{background:var(--ok);border-color:var(--ok)}
+.ckitem.done .ckbox .material-icons{opacity:1;transform:scale(1)}
+.ckitem.done .cktxt{text-decoration:line-through;color:#9AA8B6}
+.cktxt{font-size:13px;font-weight:600}
+.addrow{display:flex;gap:8px;margin-top:12px}
+.addrow input{flex:1;border:1.5px solid var(--line);border-radius:12px;padding:9px 13px;font-family:inherit;font-size:13px;background:#FAFCFE;outline:none;color:var(--ink)}
+.addrow input:focus{border-color:var(--p)}
+.lp{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 6px;scrollbar-width:none}
+.lcard{min-width:106px;background:#F5F8FC;border:1.5px solid transparent;border-radius:16px;padding:12px 10px;cursor:pointer;transition:.25s;text-align:center;flex-shrink:0;overflow:hidden;position:relative}
+.lcard:hover{transform:translateY(-3px)}
+.lcard .n{font-size:20px;font-weight:900;color:var(--pd)}
+.lcard .t{font-size:10.5px;color:var(--sub);margin:4px 0 8px;font-weight:700;white-space:nowrap}
+.lcard .st{font-size:10px;font-weight:800;display:inline-flex;align-items:center;gap:3px;padding:3px 9px;border-radius:99px;background:#fff;color:var(--sub)}
+.lcard .st .material-icons{font-size:12px}
+.lcard.cur{border-color:var(--p);background:var(--pl)}
+.lcard.cur .st{color:var(--p)}
+.lcard.done .st{color:var(--ok)}
+
+/* ═══ تب کجای مسیر ═══ */
+.qprog{display:flex;gap:5px;margin-bottom:14px}
+.qprog i{flex:1;height:4px;border-radius:99px;background:#E4EBF3;transition:.3s}
+.qprog i.on{background:var(--p)}
+.qq{font-size:15.5px;font-weight:800;line-height:1.8;margin-bottom:14px}
+.qopt{display:flex;align-items:center;gap:10px;width:100%;text-align:right;background:#F6F9FC;border:1.5px solid var(--line);border-radius:14px;padding:13px 14px;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer;margin-bottom:10px;transition:.2s}
+.qopt:hover{border-color:var(--pb);background:var(--pl)}
+.qopt .material-icons{color:var(--p);font-size:18px}
+.rbar{margin-bottom:12px}
+.rbar .rt{display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:5px}
+.rbar .tr{height:9px;background:#EDF2F8;border-radius:99px;overflow:hidden}
+.rbar .tr i{display:block;height:100%;width:0;border-radius:99px;background:var(--grad);transition:width .9s cubic-bezier(.2,.7,.3,1)}
+.acc{border:1px solid var(--line);border-radius:16px;margin-bottom:10px;overflow:hidden;background:#fff;box-shadow:var(--sh)}
+.acc-h{display:flex;align-items:center;gap:10px;padding:13px 15px;cursor:pointer;font-weight:700;font-size:13px;user-select:none}
+.acc-h .material-icons:first-child{color:var(--p);font-size:19px}
+.acc-h .chev{margin-inline-start:auto;transition:.3s;color:var(--sub)}
+.acc.open .acc-h .chev{transform:rotate(180deg)}
+.acc-b{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc.open .acc-b{max-height:420px}
+.acc-b-in{padding:0 15px 14px;font-size:12.5px;color:var(--sub);line-height:2}
+
+/* ═══ تب جزوه ═══ */
+.swrow{display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:14px;padding:11px 14px;border:1px solid var(--line);margin-bottom:12px;cursor:pointer}
+.swrow .swt{font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:7px}
+.swrow .material-icons{font-size:18px;color:var(--p)}
+.sw{width:44px;height:25px;border-radius:99px;background:#D6DEE8;position:relative;transition:.25s;flex-shrink:0}
+.sw::after{content:'';position:absolute;top:3px;right:3px;width:19px;height:19px;border-radius:50%;background:#fff;transition:.25s;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.sw.on{background:var(--p)}
+.sw.on::after{transform:translateX(-19px)}
+.lpills{display:flex;gap:7px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px;scrollbar-width:none}
+.pill{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:7px 16px;font-family:inherit;font-size:12.5px;font-weight:800;color:var(--sub);cursor:pointer;transition:.2s;flex-shrink:0;overflow:hidden;position:relative}
+.pill.on{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 4px 10px rgba(13,71,161,.25)}
+.lhead{background:linear-gradient(135deg,#E3F2FD,#BBDEFB);border-radius:var(--r);padding:16px 18px;margin-bottom:12px;display:flex;align-items:center;gap:14px}
+.lhead .num{width:52px;height:52px;background:var(--grad);color:#fff;border-radius:16px;display:grid;place-items:center;font-size:21px;font-weight:900;flex-shrink:0;box-shadow:0 6px 14px rgba(13,71,161,.3)}
+.lhead .lt{font-weight:800;font-size:15.5px;color:var(--pd)}
+.wrow{padding:13px 2px;border-bottom:1px dashed var(--line);cursor:pointer;transition:background .2s;border-radius:8px}
+.wrow:last-child{border-bottom:none}
+.wtop{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.wde{font-size:16px;font-weight:800;color:var(--pd)}
+.wtr{font-size:11px;color:#9AA8B6}
+.wfa{font-size:13px;color:var(--ink);font-weight:700;margin-inline-start:auto}
+.wex{margin-top:7px;font-size:11.5px;color:var(--sub);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.wex .ltr{font-weight:700}
+#wordList.mask .wde,#wordList.mask .wex .ltr{filter:blur(7px);transition:filter .3s;user-select:none}
+#wordList.mask .wrow.peek .wde,#wordList.mask .wrow.peek .wex .ltr{filter:blur(0)}
+
+/* ═══ تب تمرین ═══ */
+.target{background:#F5F9FD;border:1.5px dashed var(--pb);border-radius:14px;padding:14px;text-align:center;margin-bottom:14px}
+.tfa{font-size:12px;color:var(--sub);margin-bottom:6px}
+.tde{font-size:18.5px;font-weight:800;color:var(--pd);direction:ltr}
+.rbtns{display:flex;gap:8px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+.meter{height:9px;background:#EDF2F8;border-radius:99px;overflow:hidden;margin-bottom:10px}
+.meter i{display:block;height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,#1E88E5,#42A5F5);transition:width .1s linear}
+.recbtn.rec{background:linear-gradient(135deg,#E53935,#B71C1C);animation:pulse 1.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(229,57,53,.45)}70%{box-shadow:0 0 0 13px rgba(229,57,53,0)}100%{box-shadow:0 0 0 0 rgba(229,57,53,0)}}
+.slots{direction:ltr;min-height:58px;background:#F5F9FD;border:2px dashed var(--pb);border-radius:14px;display:flex;flex-wrap:wrap;gap:7px;padding:10px;align-items:center;justify-content:center;margin-bottom:12px;transition:.3s}
+.slots.ok{border-color:var(--ok);background:var(--okbg)}
+.slots.no{border-color:var(--bad);background:#FDEBEB;animation:shake .4s}
+@keyframes shake{25%{transform:translateX(4px)}50%{transform:translateX(-4px)}75%{transform:translateX(3px)}}
+.slots .hint{font-size:11px;color:#9AA8B6;font-family:'Vazirmatn'}
+.chips{direction:ltr;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:12px}
+.chip{direction:ltr;background:#fff;border:1.5px solid var(--pb);color:var(--pd);border-radius:11px;padding:8px 14px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s;font-family:inherit;overflow:hidden;position:relative}
+.chip:hover{background:var(--pl)}
+.sslot{background:var(--grad);color:#fff;border-radius:11px;padding:8px 14px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 8px rgba(13,71,161,.25)}
+.srsgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.flip{height:110px;perspective:700px;cursor:pointer}
+.fin{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .5s}
+.flip.on .fin{transform:rotateY(180deg)}
+.fface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:6px;text-align:center}
+.ffront{background:#fff;border:1.5px solid var(--line);box-shadow:var(--sh)}
+.fback{background:var(--grad);color:#fff;transform:rotateY(180deg)}
+.ffront b{font-size:14.5px}
+.ffront small{font-size:9.5px;color:#9AA8B6}
+.fback b{font-size:15px}
+.fback small{font-size:10px;opacity:.85}
+.srsbtns{display:flex;gap:6px;margin-top:8px}
+.srsbtns .btn{flex:1;justify-content:center;padding:7px 4px;font-size:11px}
+.srsdone{background:var(--okbg);border:1.5px solid #B7DFC0;border-radius:14px;height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ok)}
+.srsdone .material-icons{font-size:26px}
+.srsdone small{font-size:10.5px;font-weight:700}
+.srsrow{display:flex;align-items:center;gap:10px;padding:10px 2px;border-bottom:1px dashed var(--line);font-size:13px}
+.srsrow:last-child{border:none}
+.srsrow .ltr{font-weight:800;color:var(--pd)}
+.srsrow .fa{color:var(--sub)}
+.badge{margin-inline-start:auto;font-size:10px;font-weight:800;padding:4px 10px;border-radius:99px;flex-shrink:0}
+.b-today{background:#FDEBEB;color:var(--bad)}
+.b-tmr{background:#FFF4D6;color:var(--amberD)}
+.b-d3{background:var(--pl);color:var(--p)}
+.b-week{background:#F1F5FA;color:var(--sub)}
+
+/* ═══ تب پیشرفت ═══ */
+.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.stat{background:#fff;border-radius:16px;padding:14px 8px;text-align:center;box-shadow:var(--sh)}
+.stat .material-icons{font-size:21px;color:var(--p);background:var(--pl);border-radius:10px;padding:8px}
+.stat b{display:block;font-size:20px;font-weight:900;margin-top:9px}
+.stat small{font-size:10px;color:var(--sub);font-weight:600}
+.cal{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-top:6px}
+.cell{aspect-ratio:1;border-radius:7px;background:#E7EDF4;transition:.3s}
+.cell.on{background:var(--grad)}
+.cell.today{outline:2px solid var(--amber);outline-offset:1px}
+.lgd{display:flex;gap:14px;align-items:center;margin-top:12px;font-size:11px;color:var(--sub);flex-wrap:wrap}
+.lgd i{width:11px;height:11px;border-radius:4px;display:inline-block}
+.week{display:flex;gap:9px;align-items:flex-end;height:172px;padding-top:8px}
+.wcol{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%}
+.wbar{width:100%;max-width:34px;border-radius:8px 8px 4px 4px;background:var(--grad);height:0;transition:height .9s cubic-bezier(.2,.7,.3,1)}
+.wbar.hi{background:linear-gradient(135deg,#FFB300,#F57C00)}
+.wlbl{font-size:10.5px;color:var(--sub);font-weight:800}
+.wval{font-size:9.5px;color:var(--sub)}
+.ach{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.achd{background:#fff;border-radius:14px;padding:13px 6px;text-align:center;box-shadow:var(--sh);border:1.5px solid transparent}
+.achd .material-icons{font-size:25px;color:#C4CFDB}
+.achd small{display:block;font-size:9.5px;color:var(--sub);margin-top:6px;font-weight:800}
+.achd.won{border-color:#FFE3A3;background:linear-gradient(160deg,#FFFDF6,#FFF3D6)}
+.achd.won .material-icons{color:var(--amberD)}
+
+/* ═══ توست و کانفتی ═══ */
+#toast{position:absolute;bottom:92px;left:50%;transform:translate(-50%,16px);background:#132234;color:#fff;padding:11px 18px;border-radius:13px;font-size:12.5px;font-weight:600;opacity:0;transition:.35s;pointer-events:none;z-index:80;box-shadow:0 10px 26px rgba(0,0,0,.35);max-width:86%;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:90}
+#confetti i{position:absolute;top:-20px;animation:cfall linear forwards}
+@keyframes cfall{to{transform:translateY(1000px) rotate(680deg)}}
+
+@media(max-width:360px){.ab-title{font-size:16px}.wname{font-size:23px}.statgrid{gap:7px}.srsgrid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <!-- یادداشت کنار قاب (فقط دسکتاپ) -->
+  <aside class="snote">
+    <div class="sn-logo" id="snLogo"></div>
+    <h1>Deutsch Coach</h1>
+    <p class="snt">مربی مکالمه‌ای آلمانی به روش میشل توماس — بدون حفظ‌کردن، بدون تکلیف، از دقیقهٔ اول حرف بزن.</p>
+    <ul>
+      <li><span class="material-icons">mic</span>ضبط صدای خودت + شنیدن تلفظ درست</li>
+      <li><span class="material-icons">extension</span>بازی خرد کردن جمله با چک خودکار</li>
+      <li><span class="material-icons">update</span>مرور فاصله‌دار، آزمون گیر و آمار زنده</li>
+    </ul>
+    <p class="snh">پروتوتایپ تعاملی · همه‌چیز در یک فایل<br>برای ضبط صدا، اجازهٔ میکروفون بده</p>
+  </aside>
+
+  <!-- قاب گوشی -->
+  <div class="device">
+    <div class="screen">
+
+      <!-- ═══ صفحهٔ خوش‌آمد ═══ -->
+      <div id="welcome">
+        <div class="sbar"><span class="clock">--:--</span><span class="sicons"><span class="material-icons">signal_cellular_4_bar</span><span class="material-icons">wifi</span><span class="material-icons">battery_full</span></span></div>
+        <div class="w-in">
+          <div class="wlogo" id="wLogo"></div>
+          <div class="wname">Deutsch Coach</div>
+          <div class="wtag">مربی مکالمه‌ای آلمانی به روش میشل توماس<br>بدون حفظ‌کردن، بدون تکلیف — فقط گوش کن و بگو</div>
+          <div class="wfeat">
+            <div class="wf"><span class="material-icons">psychology</span>ساخت جمله با کلمات هم‌ریشه، از همان جلسهٔ اول</div>
+            <div class="wf"><span class="material-icons">record_voice_over</span>ضبط صدا و مقایسه با تلفظ درست</div>
+            <div class="wf"><span class="material-icons">verified_user</span>قانون طلایی: بدون دیکشنری و مترجم</div>
+          </div>
+          <button class="wstart" id="startBtn">شروع کنیم<span class="material-icons">arrow_back</span></button>
+        </div>
+        <div class="wfoot">پروتوتایپ تعاملی · نسخهٔ ۲٫۰</div>
+      </div>
+
+      <!-- ═══ خودِ اپ ═══ -->
+      <div id="app">
+        <div class="chrome">
+          <div class="sbar"><span class="clock">--:--</span><span class="sicons"><span class="material-icons">signal_cellular_4_bar</span><span class="material-icons">wifi</span><span class="material-icons">battery_full</span></span></div>
+          <header class="appbar">
+            <div class="ab-r">
+              <div class="mini" id="abLogo"></div>
+              <div>
+                <div class="ab-title" id="abTitle">مربی</div>
+                <div class="ab-sub" id="abSub">برنامهٔ امروزت</div>
+              </div>
+            </div>
+            <div class="ab-chip"><span class="material-icons">local_fire_department</span><span id="abStreak">۴</span></div>
+          </header>
+        </div>
+
+        <main class="views" id="views">
+
+          <!-- ─── تب ۱: مربی ─── -->
+          <section class="view" id="v-coach">
+            <div class="hero">
+              <div>
+                <h2 id="heroHi">آماده‌ای رفیق؟</h2>
+                <div class="dt" id="heroDate"></div>
+                <p>امروز فقط همین ۵ قدم. میشل می‌گفت: «هرچی آرام‌تر بری، سریع‌تر یاد می‌گیری.»</p>
+              </div>
+              <div class="ring">
+                <svg width="94" height="94" viewBox="0 0 94 94">
+                  <circle cx="47" cy="47" r="40" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="7"/>
+                  <circle id="ringFill" cx="47" cy="47" r="40" fill="none" stroke="#FFD54F" stroke-width="7" stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="251.3" style="transition:stroke-dashoffset .7s cubic-bezier(.2,.7,.3,1)"/>
+                </svg>
+                <div class="rv"><b id="ringPct">۰/۵</b><small>امروز</small></div>
+              </div>
+            </div>
+
+            <div class="pledge">
+              <div class="pttl"><span class="material-icons">verified_user</span>قانون طلایی: تقلب ممنوع</div>
+              <p>هیچ‌وقت سراغ مترجم و دیکشنری نرو. اگه کلمه‌ای یادت نیست، همون‌جا بمون و ادامه بده؛ مغزت خودش الگو رو می‌گیره. اعتماد کن به فرایند.</p>
+              <button class="btn pri" id="pledgeBtn" style="margin-top:12px"><span class="material-icons">volunteer_activism</span>امروز قول می‌دم تقلب نکنم</button>
+              <div class="stamp hidden" id="stamp">قول امروز ثبت شد</div>
+            </div>
+
+            <div class="card">
+              <div class="cttl"><span class="ic"><span class="material-icons">fact_check</span></span>چک‌لیست امروز<span class="cnt" id="ckCount"></span></div>
+              <div class="ckbar"><i id="ckBarFill"></i></div>
+              <div id="ckList"></div>
+              <div class="addrow">
+                <input id="ckInput" placeholder="وظیفهٔ دلخواهت رو بنویس…" autocomplete="off"/>
+                <button class="btn gho" id="ckAdd" title="افزودن"><span class="material-icons">add</span></button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="cttl"><span class="ic"><span class="material-icons">school</span></span>لکسیون امروز</div>
+              <div class="lp" id="lessonPicker"></div>
+              <div class="sub" style="margin-top:6px">روی هر لکسیون بزن تا جزوه‌اش باز شه. ترتیب مهمه — مثل دیوار، آجر به آجر.</div>
+            </div>
+          </section>
+
+          <!-- ─── تب ۲: کجای مسیر ─── -->
+          <section class="view" id="v-path">
+            <div class="card">
+              <div class="cttl"><span class="ic"><span class="material-icons">explore</span></span>آزمون ۴ سؤالیِ گیر</div>
+              <div class="sub" style="margin-bottom:14px">صادقانه جواب بده تا بگم دقیقاً کجای مسیر گیر کردی و چه چیزی امروز بازش می‌کنه.</div>
+              <div id="quizBox"></div>
+            </div>
+            <div class="cttl" style="margin:6px 4px 10px"><span class="ic"><span class="material-icons">lightbulb</span></span>راهنمایی‌های سریع مربی</div>
+            <div id="accBox">
+              <div class="acc">
+                <div class="acc-h"><span class="material-icons">label</span>آرتیکل‌ها (der / die / das)<span class="material-icons chev">expand_more</span></div>
+                <div class="acc-b"><div class="acc-b-in">
+                  آرتیکل رو هیچ‌وقت جدا از اسم یاد نگیر — «der Tee» یعنی «چای»، نه فقط «Tee». میشل توماس می‌گفت: آرتیکل، تاجِ اسمه؛ بدون تاج از خونه بیرون نرو!
+                  <div style="margin-top:10px"><button class="btn gho" data-goles="5"><span class="material-icons">menu_book</span>لکسیون ۵</button></div>
+                </div></div>
+              </div>
+              <div class="acc">
+                <div class="acc-h"><span class="material-icons">autorenew</span>صرف فعل‌ها<span class="material-icons chev">expand_more</span></div>
+                <div class="acc-b"><div class="acc-b-in">
+                  فعل‌های -en تقریباً همه یک الگو دارن: ich lerne، du lernst، Sie lernen. به‌جای جدول حفظ کنی، هر فعل جدید رو همون لحظه با سه ضمیر بلند بگو — الگو خودش تو دستت می‌شینه.
+                  <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn gho" data-goles="2"><span class="material-icons">menu_book</span>لکسیون ۲</button><button class="btn gho" data-goles="6"><span class="material-icons">menu_book</span>لکسیون ۶</button></div>
+                </div></div>
+              </div>
+              <div class="acc">
+                <div class="acc-h"><span class="material-icons">format_list_numbered</span>ترتیب کلمات در جمله<span class="material-icons chev">expand_more</span></div>
+                <div class="acc-b"><div class="acc-b-in">
+                  فقط یک قانون لازم داری: فعل همیشه نفر دوم جمله‌ست — حتی وقتی جمله با «Heute» شروع می‌شه: Heute lerne ich Deutsch. همین یک قانون، ۷۰٪ جملات آلمانی رو حل می‌کنه.
+                  <div style="margin-top:10px"><button class="btn gho" data-goles="6"><span class="material-icons">menu_book</span>لکسیون ۶</button></div>
+                </div></div>
+              </div>
+              <div class="acc">
+                <div class="acc-h"><span class="material-icons">graphic_eq</span>تلفظ (ü ، ö ، ch)<span class="material-icons chev">expand_more</span></div>
+                <div class="acc-b"><div class="acc-b-in">
+                  تلفظ با جدول یاد گرفته نمی‌شه، با گوش. ü رو با گفتنِ «ای» با لب‌های گردِ «او» بساز. ch بعد از i و e نرمه. مسیر: شنیدن ← تکرار ← ضبط ← مقایسه.
+                  <div style="margin-top:10px"><button class="btn gho" data-gotab="practice"><span class="material-icons">mic</span>تمرین ضبط</button></div>
+                </div></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ─── تب ۳: جزوه ─── -->
+          <section class="view" id="v-notes">
+            <div class="swrow" id="swRow">
+              <div class="swt"><span class="material-icons">visibility_off</span>پنهان‌کردن ستون آلمانی (خودآزمایی)</div>
+              <div class="sw" id="maskSw"></div>
+            </div>
+            <div class="lpills" id="lpills"></div>
+            <div class="lhead" id="lhead"></div>
+            <div class="card">
+              <div class="cttl"><span class="ic"><span class="material-icons">menu_book</span></span><span id="lt2"></span></div>
+              <div class="sub" style="margin-bottom:6px">روی هر ردیف بزن تا آلمانی‌ش پیدا/پنهان شه — با ستون مخفی، خودت رو محک بزن.</div>
+              <div id="wordList"></div>
+              <div style="display:flex;justify-content:space-between;margin-top:14px;gap:8px">
+                <button class="btn gho2" id="lPrev"><span class="material-icons">arrow_forward</span>قبلی</button>
+                <button class="btn gho" id="lNext">بعدی<span class="material-icons">arrow_back</span></button>
+              </div>
+            </div>
+            <button class="btn pri" id="lPractice" style="width:100%;justify-content:center"><span class="material-icons">mic</span>تمرین همین لکسیون</button>
+          </section>
+
+          <!-- ─── تب ۴: تمرین ─── -->
+          <section class="view" id="v-practice">
+            <div class="card">
+              <div class="cttl"><span class="ic"><span class="material-icons">record_voice_over</span></span>گفتار: گوش کن، بگو، مقایسه کن</div>
+              <div class="target">
+                <div class="tfa" id="psFa"></div>
+                <div class="tde" id="psDe"></div>
+              </div>
+              <div class="rbtns">
+                <button class="btn gho" id="ttsBtn"><span class="material-icons">volume_up</span>شنیدن</button>
+                <button class="btn pri recbtn" id="recBtn"><span class="material-icons">mic</span>ضبط</button>
+                <button class="btn gho2" id="playBtn" disabled><span class="material-icons">play_arrow</span>پخش من</button>
+              </div>
+              <div class="meter"><i id="levelBar"></i></div>
+              <div class="sub" id="recStat" style="text-align:center">اول جملهٔ نمونه رو گوش کن، بعد ضبط کن و با اصلهات مقایسه کن.</div>
+              <button class="btn gho2" id="nextSent" style="width:100%;justify-content:center;margin-top:10px">جملهٔ بعدی<span class="material-icons">skip_next</span></button>
+            </div>
+
+            <div class="card">
+              <div class="cttl"><span class="ic"><span class="material-icons">extension</span></span>خرد کردن جمله<span class="cnt" id="sbScore"></span></div>
+              <div class="sub" style="margin-bottom:12px">این جملهٔ آلمانی رو بساز: <b id="sbFa"></b></div>
+              <div class="slots" id="sbSlots"></div>
+              <div class="chips" id="sbChips"></div>
+              <div style="display:flex;gap:8px">
+                <button class="btn gho2" id="sbReset" style="flex:1;justify-content:center"><span class="material-icons">refresh</span>از اول</button>
+                <button class="btn pri" id="sbNext" style="flex:1;justify-content:center" disabled>جملهٔ بعدی<span class="material-icons">skip_next</span></button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="cttl"><span class="ic"><span class="material-icons">update</span></span>مرور فاصله‌دار — امروز سرِ وقت</div>
+              <div class="srsgrid" id="srsToday"></div>
+              <div class="sub" style="margin:10px 0 4px">نوبت‌های بعدی:</div>
+              <div id="srsNext"></div>
+            </div>
+          </section>
+
+          <!-- ─── تب ۵: پیشرفت ─── -->
+          <section class="view" id="v-progress">
+            <div class="statgrid" id="statGrid"></div>
+            <div class="card">
+              <div class="cttl"><span class="ic"><span class="material-icons">date_range</span></span>۳۰ روز گذشته</div>
+              <div class="cal" id="calGrid"></div>
+              <div class="lgd">
+                <span style="display:flex;align-items:center;gap:5px"><i style="background:var(--grad)"></i>روز کامل</span>
+                <span style="display:flex;align-items:center;gap:5px"><i style="background:#E7EDF4"></i>جامانده</span>
+                <span style="display:flex;align-items:center;gap:5px"><i style="outline:2px solid var(--amber);background:transparent"></i>امروز</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="cttl"><span class="ic"><span class="material-icons">bar_chart</span></span>این هفته چقدر زدی؟</div>
+              <div class="week" id="weekChart"></div>
+            </div>
+            <div class="card">
+              <div class="cttl"><span class="ic"><span class="material-icons">emoji_events</span></span>نشان‌ها</div>
+              <div class="ach" id="achGrid"></div>
+            </div>
+          </section>
+
+        </main>
+
+        <nav class="nav" id="nav">
+          <div class="nv on" data-tab="coach"><span class="material-icons">sports</span><span class="lbl">مربی</span></div>
+          <div class="nv" data-tab="path"><span class="material-icons">explore</span><span class="lbl">کجای مسیر</span></div>
+          <div class="nv" data-tab="notes"><span class="material-icons">menu_book</span><span class="lbl">جزوه</span></div>
+          <div class="nv" data-tab="practice"><span class="material-icons">record_voice_over</span><span class="lbl">تمرین</span></div>
+          <div class="nv" data-tab="progress"><span class="material-icons">insights</span><span class="lbl">پیشرفت</span></div>
+        </nav>
+      </div>
+
+      <div id="confetti"></div>
+      <div id="toast"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══════════ ابزارها ═══════════ */
+const $=id=>document.getElementById(id);
+const fa=n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]).replace('.','٫');
+const buzz=(ms=8)=>{try{navigator.vibrate&&navigator.vibrate(ms)}catch(e){}};
+let toastT;
+function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2600);buzz(15)}
+const COLS=['#1565C0','#FFB300','#43A047','#E53935','#1E88E5','#F57C00'];
+function confetti(n=26){const c=$('confetti');for(let i=0;i<n;i++){const p=document.createElement('i');p.style.cssText=`right:${(Math.random()*100).toFixed(1)}%;background:${COLS[i%COLS.length]};width:${6+Math.random()*6|0}px;height:${9+Math.random()*8|0}px;animation-duration:${(1+Math.random()).toFixed(2)}s;animation-delay:${(Math.random()*.25).toFixed(2)}s;border-radius:2px`;c.appendChild(p);setTimeout(()=>p.remove(),2400)}}
+/* افکت ریپل */
+document.addEventListener('pointerdown',e=>{const b=e.target.closest('.btn,.nv,.pill,.chip,.lcard,.qopt');if(!b)return;const r=b.getBoundingClientRect();const s=document.createElement('span');s.className='rip';const d=Math.max(r.width,r.height)*1.1;s.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;b.appendChild(s);setTimeout(()=>s.remove(),650)});
+
+/* ═══════════ لوگو (D + C + پرچم آلمان) ═══════════ */
+const LOGO=`<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="dcg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#42A5F5"/><stop offset="1" stop-color="#0D47A1"/></linearGradient></defs>
+<rect width="64" height="64" rx="15" fill="url(#dcg)"/>
+<path d="M22 16 h3 a16 16 0 0 1 0 32 h-3 z" fill="#fff"/>
+<path d="M22 46 L14 55 L23 49 Z" fill="#fff"/>
+<path d="M37.3 23.7 A7.5 7.5 0 1 0 37.3 34.3" stroke="url(#dcg)" stroke-width="4.4" fill="none" stroke-linecap="round"/>
+<rect x="26" y="39" width="8" height="2" rx="1" fill="#111"/>
+<rect x="26" y="41.3" width="8" height="2" rx="1" fill="#D32F2F"/>
+<rect x="26" y="43.6" width="8" height="2" rx="1" fill="#F9A825"/>
+</svg>`;
+ $('wLogo').innerHTML=LOGO;$('abLogo').innerHTML=LOGO;$('snLogo').innerHTML=LOGO;
+
+/* ═══════════ دادهٔ لکسیون‌ها ═══════════ */
+const LESSONS=[
+{title:'کلمات آشنا',desc:'هم‌ریشه‌ها و آجرهای اول: با همین ۸ کلمه اولین جمله‌هایت را می‌سازی.',words:[
+ {de:'was',tr:'واس',fa:'چه',ex:'Was ist das?',exfa:'این چیست؟'},
+ {de:'das',tr:'داس',fa:'آن، این',ex:'Das ist gut.',exfa:'آن خوب است.'},
+ {de:'ist',tr:'ایست',fa:'هست، است',ex:'Das ist Wasser.',exfa:'آن آب است.'},
+ {de:'nicht',tr:'نیشت',fa:'نیست',ex:'Das ist nicht gut.',exfa:'آن خوب نیست.'},
+ {de:'gut',tr:'گوت',fa:'خوب',ex:'Sehr gut!',exfa:'خیلی خوب!'},
+ {de:'sehr',tr:'زِر',fa:'خیلی',ex:'Das ist sehr gut.',exfa:'آن خیلی خوب است.'},
+ {de:'hier',tr:'هیر',fa:'اینجا',ex:'Er ist hier.',exfa:'او اینجاست.'},
+ {de:'dort',tr:'دورت',fa:'آنجا',ex:'Das Restaurant ist dort.',exfa:'رستوران آنجاست.'}]},
+{title:'افعال طلایی',desc:'شش فعل پرکاربرد با -en؛ کار هر جمله‌ای همین‌ها می‌کنند.',words:[
+ {de:'kommen',tr:'کُمِن',fa:'آمدن',ex:'Ich komme aus Iran.',exfa:'من اهل ایران‌ام.'},
+ {de:'trinken',tr:'ترینکِن',fa:'نوشیدن',ex:'Ich möchte Wasser trinken.',exfa:'می‌خواهم آب بنوشم.'},
+ {de:'essen',tr:'اِسِن',fa:'خوردن',ex:'Wir möchten essen.',exfa:'می‌خواهیم غذا بخوریم.'},
+ {de:'lernen',tr:'لِرنِن',fa:'یاد گرفتن',ex:'Ich lerne Deutsch.',exfa:'من آلمانی یاد می‌گیرم.'},
+ {de:'arbeiten',tr:'آربایتِن',fa:'کار کردن',ex:'Sie arbeiten heute.',exfa:'آن‌ها امروز کار می‌کنند.'},
+ {de:'kaufen',tr:'کاوفِن',fa:'خریدن',ex:'Ich kaufe das.',exfa:'من این را می‌خرم.'}]},
+{title:'ضمیرها',desc:'آجرهای هر جمله: من، شما، او، ما…',words:[
+ {de:'ich',tr:'ایش',fa:'من',ex:'Ich lerne.',exfa:'من یاد می‌گیرم.'},
+ {de:'Sie',tr:'زی',fa:'شما (محترمانه)',ex:'Sie sind gut.',exfa:'شما خوب هستید.'},
+ {de:'du',tr:'دو',fa:'تو',ex:'Du bist gut.',exfa:'تو خوبی.'},
+ {de:'er',tr:'اِر',fa:'او (مرد)',ex:'Er kommt.',exfa:'او می‌آید.'},
+ {de:'sie',tr:'زی',fa:'او (زن)',ex:'Sie kommt.',exfa:'او می‌آید.'},
+ {de:'wir',tr:'ویر',fa:'ما',ex:'Wir lernen Deutsch.',exfa:'ما آلمانی یاد می‌گیریم.'}]},
+{title:'می‌خواهم و می‌توانم',desc:'با فعل کمکی، فعل اصلی می‌رود آخر جمله — قلب مکالمه.',words:[
+ {de:'möchte',tr:'مُخته',fa:'می‌خواهم',ex:'Ich möchte trinken.',exfa:'می‌خواهم بنوشم.'},
+ {de:'kann',tr:'کان',fa:'می‌توانم',ex:'Ich kann kommen.',exfa:'می‌توانم بیایم.'},
+ {de:'muss',tr:'موس',fa:'باید',ex:'Ich muss arbeiten.',exfa:'باید کار کنم.'},
+ {de:'will',tr:'ویل',fa:'می‌خواهم (با اصرار)',ex:'Ich will lernen.',exfa:'می‌خواهم یاد بگیرم.'},
+ {de:'möchte nicht',tr:'مُخته نیست',fa:'نمی‌خواهم',ex:'Ich möchte nicht arbeiten.',exfa:'نمی‌خواهم کار کنم.'}]},
+{title:'آرتیکل‌ها',desc:'der / die / das را همراه اسم یاد بگیر، نه جدا از آن.',words:[
+ {de:'der Mann',tr:'دِر مان',fa:'مرد',ex:'Der Mann kommt.',exfa:'مرد می‌آید.'},
+ {de:'die Frau',tr:'دی فرو',fa:'زن',ex:'Die Frau ist hier.',exfa:'زن اینجاست.'},
+ {de:'das Kind',tr:'داس کیند',fa:'کودک',ex:'Das Kind lernt.',exfa:'کودک یاد می‌گیرد.'},
+ {de:'der Tee',tr:'دِر ته',fa:'چای',ex:'Der Tee ist gut.',exfa:'چای خوب است.'},
+ {de:'die Milch',tr:'دی میلش',fa:'شیر',ex:'Ich trinke Milch.',exfa:'شیر می‌نوشم.'},
+ {de:'das Wasser',tr:'داس واسِر',fa:'آب',ex:'Das Wasser ist kalt.',exfa:'آب سرد است.'}]},
+{title:'ترتیب طلایی',desc:'قانون تنها: فعل همیشه نفر دوم است — حتی وقتی جمله با زمان شروع می‌شود.',words:[
+ {de:'heute',tr:'هویته',fa:'امروز',ex:'Heute lerne ich Deutsch.',exfa:'امروز آلمانی یاد می‌گیرم.'},
+ {de:'morgen',tr:'مورگِن',fa:'فردا',ex:'Morgen arbeite ich.',exfa:'فردا کار می‌کنم.'},
+ {de:'auch',tr:'اوخ',fa:'هم',ex:'Ich lerne auch.',exfa:'من هم یاد می‌گیرم.'},
+ {de:'aber',tr:'آبِر',fa:'اما',ex:'Gut, aber teuer.',exfa:'خوب، اما گران.'},
+ {de:'und',tr:'اونت',fa:'و',ex:'Ich und Sie.',exfa:'من و شما.'},
+ {de:'oder',tr:'اوذِر',fa:'یا',ex:'Tee oder Kaffee?',exfa:'چای یا قهوه؟'}]},
+{title:'پرسیدن',desc:'با W شروع کن؛ سؤال ساختن از جواب آسان‌تر است.',words:[
+ {de:'wer',tr:'وِر',fa:'چه کسی',ex:'Wer kommt?',exfa:'چه کسی می‌آید؟'},
+ {de:'wo',tr:'وو',fa:'کجا',ex:'Wo ist das?',exfa:'کجاست؟'},
+ {de:'wann',tr:'وان',fa:'چه وقت',ex:'Wann kommen Sie?',exfa:'کِی می‌آیید؟'},
+ {de:'warum',tr:'واروم',fa:'چرا',ex:'Warum nicht?',exfa:'چرا نه؟'},
+ {de:'wie',tr:'وی',fa:'چگونه',ex:'Wie gut!',exfa:'چه خوب!'}]},
+{title:'گذشتهٔ نزدیک',desc:'war و hatte؛ تعریف دیروز با دو کلمه.',words:[
+ {de:'war',tr:'وار',fa:'بود',ex:'Das war gut.',exfa:'خوب بود.'},
+ {de:'hatte',tr:'هاته',fa:'داشت',ex:'Ich hatte Zeit.',exfa:'وقت داشتم.'},
+ {de:'konnte',tr:'کونته',fa:'می‌توانست',ex:'Ich konnte nicht kommen.',exfa:'نمی‌توانستم بیایم.'},
+ {de:'wollte',tr:'وُله',fa:'می‌خواست',ex:'Er wollte essen.',exfa:'می‌خواست غذا بخورد.'},
+ {de:'ging',tr:'گینگ',fa:'رفت',ex:'Ich ging nach Hause.',exfa:'به خانه رفتم.'}]},
+{title:'آینده',desc:'با werden دربارهٔ فردا حرف بزن.',words:[
+ {de:'werde',tr:'وِرده',fa:'خواهم شد',ex:'Ich werde lernen.',exfa:'خواهم آموخت.'},
+ {de:'wirst',tr:'ویرست',fa:'خواهی شد',ex:'Du wirst sehen.',exfa:'خواهی دید.'},
+ {de:'wird',tr:'ویرت',fa:'خواهد شد',ex:'Es wird gut.',exfa:'خوب خواهد شد.'},
+ {de:'bald',tr:'بالت',fa:'به‌زودی',ex:'Ich komme bald.',exfa:'به‌زودی می‌آیم.'},
+ {de:'vielleicht',tr:'فایلایش',fa:'شاید',ex:'Vielleicht morgen.',exfa:'شاید فردا.'}]},
+{title:'نفی و قیدها',desc:'kein، immer، nur… جمله‌هایت را دقیق کن.',words:[
+ {de:'kein',tr:'کاین',fa:'هیچ، هیچ‌…‌ای',ex:'Ich habe kein Wasser.',exfa:'آبی ندارم.'},
+ {de:'immer',tr:'ایمِر',fa:'همیشه',ex:'Ich trinke immer Tee.',exfa:'همیشه چای می‌نوشم.'},
+ {de:'nie',tr:'نی',fa:'هرگز',ex:'Ich arbeite nie.',exfa:'هرگز کار نمی‌کنم.'},
+ {de:'nur',tr:'نور',fa:'فقط',ex:'Nur Wasser, bitte.',exfa:'فقط آب، لطفاً.'},
+ {de:'alles',tr:'آلِس',fa:'همه‌چیز',ex:'Alles gut?',exfa:'همه‌چیز خوب است؟'}]}
+];
+
+/* ═══════════ جمله‌های تمرین ═══════════ */
+const GAME=[
+ {de:'Ich möchte Deutsch lernen',fa:'می‌خواهم آلمانی یاد بگیرم.'},
+ {de:'Das ist nicht gut',fa:'این خوب نیست.'},
+ {de:'Wo ist das Restaurant',fa:'رستوران کجاست؟'},
+ {de:'Heute lerne ich viel',fa:'امروز زیاد یاد می‌گیرم.'},
+ {de:'Ich trinke nur Wasser',fa:'فقط آب می‌نوشم.'}
+];
+
+/* ═══════════ آزمون تشخیص ═══════════ */
+const QUIZ=[
+ {q:'وقتی می‌خواهی جمله بسازی، بیشتر کدام حالتت می‌شود؟',o:[
+  {t:'کلمه‌ها را بلدم ولی نمی‌دانم کجا بگذارمشان',a:'order'},
+  {t:'روی der / die / das و صرف فعل گیر می‌کنم',a:'grammar'},
+  {t:'کلمهٔ کافی بلد نیستم',a:'vocab'}]},
+ {q:'موقع حرف زدن آلمانی…',o:[
+  {t:'از اشتباه می‌ترسم و ساکت می‌شوم',a:'speak'},
+  {t:'فعل‌ها را درست صرف نمی‌کنم',a:'grammar'},
+  {t:'جمله‌ام وسط راه می‌ماند چون کلمه یادم نمی‌آید',a:'vocab'}]},
+ {q:'وقتی آلمانی گوش می‌دهی…',o:[
+  {t:'کلمه‌ها را می‌شنوم ولی ساختار جمله را نمی‌گیرم',a:'order'},
+  {t:'ü و ö و ch قاطی می‌شوند',a:'pron'},
+  {t:'لهجه و سرعت، حرفم را می‌زند',a:'speak'}]},
+ {q:'موقع مرور جزوه…',o:[
+  {t:'کلمه را دیده‌ام ولی یادم نمی‌آید',a:'vocab'},
+  {t:'مثال‌ها را می‌فهمم ولی خودم نمی‌توانم بسازم',a:'speak'},
+  {t:'زمان و شکل فعل‌ها فراموش می‌شود',a:'grammar'}]}
+];
+const AXES={vocab:'واژگان',grammar:'آرتیکل و فعل',order:'ترتیب کلمات',speak:'جسارتِ گفتن',pron:'تلفظ'};
+const AXADVICE={
+ vocab:{d:'مشکلت کمبود آجره، نه دیوار. لکسیون‌های ۱ و ۲ رو دوباره برو — کلمات هم‌ریشه خیلی سریع می‌چسبن.',go:1},
+ grammar:{d:'آرتیکل و فعل رو جدا از اسم و جمله یاد نگیر. لکسیون ۲ و ۵ با هم، الگو رو اتومات می‌کنن.',go:5},
+ order:{d:'فقط یک قانون: فعل همیشه نفر دومه. لکسیون ۶ همین یک قانون رو با تمرین خالی می‌ذاره تو دستت.',go:6},
+ speak:{d:'غلط گفتن بخشی از متده. توی تب تمرین ضبط کن و صدات رو بشنو — همین حس مقایسه باعث جسارت می‌شه.',tab:'practice'},
+ pron:{d:'ü و ö و ch با گوش یاد گرفته می‌شن نه با جدول. مسیر: شنیدن ← تکرار ← ضبط ← مقایسه.',tab:'practice'}
+};
+
+/* ═══════════ ذخیره‌سازی ═══════════ */
+const KEY='dc2_state';
+const todayKey=()=>new Date().toLocaleDateString('fa-IR');
+function seed(){const cal=[];for(let i=0;i<29;i++)cal.push((i>2&&i%4!==0&&i%7!==3)?1:0);cal.push(0);
+ return {pledge:{},days:{},visited:[1,2],cur:1,stats:{streak:4,minutes:47},cal,week:[40,65,80,55,90,70,35],flags:{rec:false}}}
+let S;try{S=JSON.parse(localStorage.getItem(KEY))||seed()}catch(e){S=seed()}
+if(!S.cal||S.cal.length!==30)S.cal=seed().cal;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+const wordsCount=()=>S.visited.reduce((a,n)=>a+(LESSONS[n-1]?LESSONS[n-1].words.length:0),0);
+
+/* ساعت */
+function tick(){const t=new Date().toLocaleTimeString('fa-IR',{hour:'2-digit',minute:'2-digit'});document.querySelectorAll('.clock').forEach(el=>el.textContent=t)}
+tick();setInterval(tick,20000);
+
+/* ═══════════ تب‌ها ═══════════ */
+const TABMETA={coach:['مربی','برنامهٔ امروزت'],path:['کجای مسیر؟','تشخیصِ گیر'],notes:['جزوه','۱۰ لکسیون، ستون مخفی‌شونده'],practice:['تمرین','بگو، بشکن، مرور'],progress:['پیشرفت','آمار زندهٔ تو']};
+let curTab='coach';
+function switchTab(name){
+  curTab=name;
+  document.querySelectorAll('.nv').forEach(n=>n.classList.toggle('on',n.dataset.tab===name));
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));
+  $('v-'+name).classList.add('on');
+  $('abTitle').textContent=TABMETA[name][0];$('abSub').textContent=TABMETA[name][1];
+  $('views').scrollTop=0;buzz();
+  $('abStreak').textContent=fa(S.stats.streak);
+  if(name==='coach')renderCoach();
+  if(name==='path')renderQuiz();
+  if(name==='notes')renderNotes();
+  if(name==='practice')renderPractice();
+  if(name==='progress')renderProgress();
+}
+document.querySelectorAll('.nv').forEach(n=>n.onclick=()=>switchTab(n.dataset.tab));
+
+/* شروع */
+ $('startBtn').onclick=()=>{buzz(25);$('welcome').classList.add('out');setTimeout(()=>$('welcome').remove(),550);confetti(18);toast('خوش اومدی! از «مربی» شروع کن.')};
+
+/* ═══════════ تب مربی ═══════════ */
+const DEFAULT_CK=[
+ '۱۰ دقیقه به جلسهٔ صوتی لکسیون گوش دادم',
+ '۵ جملهٔ آلمانی رو بلند گفتم',
+ 'یک راند «خرد کردن جمله» بازی کردم',
+ 'ستون آلمانی جزوه رو پنهان کردم و خودآزمایی دادم',
+ 'بدون مترجم و دیکشنری جلو رفتم (تقلب ممنوع!)'
+];
+function todayItems(){const k=todayKey();if(!S.days[k])S.days[k]={items:DEFAULT_CK.map(t=>({t,c:false}))};return S.days[k]}
+function renderCoach(){
+  const h=new Date().getHours();
+  $('heroHi').textContent=h<12?'صبحت بخیر رفیق!':h<18?'آماده‌ای رفیق؟':'شبِ آرامی برای آلمانی';
+  $('heroDate').textContent=new Date().toLocaleDateString('fa-IR',{weekday:'long',day:'numeric',month:'long'});
+  renderChecklist();renderPledge();renderPicker();
+}
+function renderChecklist(){
+  const d=todayItems(),done=d.items.filter(i=>i.c).length;
+  $('ckCount').textContent=fa(done)+' از '+fa(d.items.length);
+  $('ckBarFill').style.width=(done/d.items.length*100)+'%';
+  $('ckList').innerHTML=d.items.map((it,i)=>`
+   <div class="ckitem ${it.c?'done':''}" data-i="${i}">
+     <div class="ckbox"><span class="material-icons">check</span></div>
+     <div class="cktxt">${it.t}</div>
+   </div>`).join('');
+  $('ckList').querySelectorAll('.ckitem').forEach(el=>el.onclick=()=>{
+    const it=d.items[+el.dataset.i];it.c=!it.c;save();buzz(20);renderChecklist();
+    if(d.items.every(x=>x.c)){S.cal[29]=1;save();confetti();toast('تمومش کردی! امروز رو زدی ✓')}
+  });
+  const C=251.3;
+  $('ringFill').style.strokeDashoffset=(C*(1-done/d.items.length)).toFixed(1);
+  $('ringPct').textContent=fa(done)+'/'+fa(d.items.length);
+}
+function renderPledge(){
+  const pledged=!!S.pledge[todayKey()];
+  $('stamp').classList.toggle('hidden',!pledged);
+  const b=$('pledgeBtn');
+  if(pledged){b.classList.remove('pri');b.classList.add('gho');b.disabled=true;b.innerHTML='<span class="material-icons">check_circle</span>ثبت شد — قولِ امروز'}
+  else{b.classList.add('pri');b.classList.remove('gho');b.disabled=false;b.innerHTML='<span class="material-icons">volunteer_activism</span>امروز قول می‌دم تقلب نکنم';
+    b.onclick=()=>{S.pledge[todayKey()]=true;save();renderPledge();confetti(14);toast('قولت ثبت شد! مربی بهت اعتماد می‌کنه.')}}
+}
+function renderPicker(){
+  $('lessonPicker').innerHTML=LESSONS.map((L,i)=>{
+    const n=i+1,done=S.visited.includes(n),cur=S.cur===n;
+    return `<div class="lcard ${cur?'cur':''} ${done?'done':''}" data-n="${n}">
+      <div class="n">${fa(n)}</div><div class="t">${L.title}</div>
+      <div class="st">${done?'<span class="material-icons">check_circle</span>دیده‌شده':cur?'در حال دیدن':'شروع کن'}</div>
+    </div>`}).join('');
+  $('lessonPicker').querySelectorAll('.lcard').forEach(el=>el.onclick=()=>openLesson(+el.dataset.n));
+}
+function openLesson(n){S.cur=n;if(!S.visited.includes(n))S.visited.push(n);save();switchTab('notes')}
+ $('ckAdd').onclick=()=>{const v=$('ckInput').value.trim();if(!v)return;todayItems().items.push({t:v,c:false});save();$('ckInput').value='';renderChecklist();toast('وظیفه اضافه شد!')};
+ $('ckInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('ckAdd').click()});
+
+/* ═══════════ تب کجای مسیر ═══════════ */
+let qIdx=0,qAns=[];
+function renderQuiz(){
+  const box=$('quizBox');
+  if(qIdx<QUIZ.length){
+    const q=QUIZ[qIdx];
+    box.innerHTML=`<div class="qprog">${QUIZ.map((_,i)=>`<i class="${i<=qIdx?'on':''}"></i>`).join('')}</div>
+    <div class="qq">${fa(qIdx+1)} از ${fa(QUIZ.length)} — ${q.q}</div>
+    ${q.o.map((o,i)=>`<button class="qopt" data-i="${i}"><span class="material-icons">radio_button_unchecked</span>${o.t}</button>`).join('')}`;
+    box.querySelectorAll('.qopt').forEach(b=>b.onclick=()=>{qAns.push(QUIZ[qIdx].o[+b.dataset.i].a);qIdx++;buzz();renderQuiz()});
+  }else{
+    const sc={};Object.keys(AXES).forEach(k=>sc[k]=0);qAns.forEach(a=>sc[a]++);
+    const max=Object.keys(sc).reduce((a,b)=>sc[a]>=sc[b]?a:b);
+    const top=Math.max(1,...Object.values(sc));
+    box.innerHTML=`<div class="qq">نتیجه: گیر اصلی‌ات «${AXES[max]}» است</div>
+     <div class="sub" style="margin-bottom:16px">${AXADVICE[max].d}</div>
+     ${Object.keys(AXES).map(k=>`<div class="rbar"><div class="rt"><span>${AXES[k]}</span><span>${fa(sc[k])}</span></div><div class="tr"><i data-w="${(sc[k]/top*100).toFixed(0)}"></i></div></div>`).join('')}
+     <div style="display:flex;gap:8px;margin-top:14px">
+       ${AXADVICE[max].go?`<button class="btn pri" style="flex:1;justify-content:center" id="qGo"><span class="material-icons">menu_book</span>لکسیون ${fa(AXADVICE[max].go)}</button>`
+        :`<button class="btn pri" style="flex:1;justify-content:center" id="qGoP"><span class="material-icons">mic</span>برو به تمرین</button>`}
+       <button class="btn gho2" id="qRe"><span class="material-icons">refresh</span></button>
+     </div>`;
+    setTimeout(()=>box.querySelectorAll('.tr i').forEach(i=>i.style.width=i.dataset.w+'%'),80);
+    if($('qGo'))$('qGo').onclick=()=>openLesson(AXADVICE[max].go);
+    if($('qGoP'))$('qGoP').onclick=()=>switchTab('practice');
+    $('qRe').onclick=()=>{qIdx=0;qAns=[];renderQuiz()};
+    confetti(16);toast('تشخیص آماده شد!');
+  }
+}
+document.querySelectorAll('.acc-h').forEach(h=>h.onclick=()=>{h.parentElement.classList.toggle('open');buzz()});
+document.querySelectorAll('[data-goles]').forEach(b=>b.onclick=e=>{e.stopPropagation();openLesson(+b.dataset.goles)});
+document.querySelectorAll('[data-gotab]').forEach(b=>b.onclick=e=>{e.stopPropagation();switchTab(b.dataset.gotab)});
+
+/* ═══════════ تب جزوه ═══════════ */
+let maskOn=false;
+ $('swRow').onclick=()=>{maskOn=!maskOn;$('maskSw').classList.toggle('on',maskOn);renderNotes();toast(maskOn?'حالت خودآزمایی روشن شد — آلمانی‌ها مخفی شدن':'نمایش عادی');buzz()};
+function renderNotes(){
+  $('lpills').innerHTML=LESSONS.map((_,i)=>`<button class="pill ${S.cur===i+1?'on':''}" data-n="${i+1}">${fa(i+1)}</button>`).join('');
+  $('lpills').querySelectorAll('.pill').forEach(p=>p.onclick=()=>{S.cur=+p.dataset.n;if(!S.visited.includes(S.cur))S.visited.push(S.cur);save();renderNotes()});
+  const L=LESSONS[S.cur-1];
+  $('lhead').innerHTML=`<div class="num">${fa(S.cur)}</div><div><div class="lt">لکسیون ${fa(S.cur)} — ${L.title}</div><div class="sub">${L.desc}</div></div>`;
+  $('lt2').textContent=L.title;
+  const wl=$('wordList');
+  wl.classList.toggle('mask',maskOn);
+  wl.innerHTML=L.words.map(w=>`
+    <div class="wrow">
+      <div class="wtop"><span class="wde ltr">${w.de}</span><span class="wtr">${w.tr}</span><span class="wfa">${w.fa}</span></div>
+      <div class="wex"><span class="ltr">${w.ex}</span><span>— ${w.exfa}</span></div>
+    </div>`).join('');
+  wl.querySelectorAll('.wrow').forEach(r=>r.onclick=()=>{if(maskOn){r.classList.toggle('peek');buzz()}});
+  $('lPrev').disabled=S.cur===1;$('lNext').disabled=S.cur===LESSONS.length;
+}
+ $('lPrev').onclick=()=>{if(S.cur>1){S.cur--;save();renderNotes()}};
+ $('lNext').onclick=()=>{if(S.cur<LESSONS.length){S.cur++;if(!S.visited.includes(S.cur))S.visited.push(S.cur);save();renderNotes()}};
+ $('lPractice').onclick=()=>switchTab('practice');
+
+/* ═══════════ تب تمرین: ضبط ═══════════ */
+let pIdx=0,recState=false,mediaRec,chunks=[],audioEl,recTimer,recT0;
+function renderTarget(){const s=GAME[pIdx%GAME.length];$('psFa').textContent=s.fa;$('psDe').textContent=s.de}
+ $('ttsBtn').onclick=()=>{
+  const s=GAME[pIdx%GAME.length];
+  try{
+    if(!('speechSynthesis' in window))throw 0;
+    const u=new SpeechSynthesisUtterance(s.de);u.lang='de-DE';u.rate=.85;
+    speechSynthesis.cancel();speechSynthesis.speak(u);toast('به تلفظ آلمانی گوش کن…');
+  }catch(e){toast('مرورگرت از گفتار پشتیبانی نمی‌کنه')}
+};
+function setRecUI(on){
+  const b=$('recBtn');
+  b.classList.toggle('rec',on);
+  b.innerHTML=on?'<span class="material-icons">stop</span>توقف':'<span class="material-icons">mic</span>ضبط';
+  if(!on)$('recStat').textContent='اول جملهٔ نمونه رو گوش کن، بعد ضبط کن و با اصلهات مقایسه کن.';
+}
+function stopRec(){if(mediaRec&&mediaRec.state!=='inactive')mediaRec.stop();clearInterval(recTimer);$('levelBar').style.width='0%'}
+function resetRec(){if(recState)stopRec();audioEl=null;$('playBtn').disabled=true;setRecUI(false)}
+ $('recBtn').onclick=async()=>{
+  if(!recState){
+    try{
+      const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+      mediaRec=new MediaRecorder(stream);chunks=[];
+      mediaRec.ondataavailable=e=>chunks.push(e.data);
+      mediaRec.onstop=()=>{
+        stream.getTracks().forEach(t=>t.stop());
+        const blob=new Blob(chunks,{type:(chunks[0]&&chunks[0].type)||'audio/webm'});
+        audioEl=new Audio(URL.createObjectURL(blob));
+        $('playBtn').disabled=false;
+        S.flags.rec=true;S.stats.minutes+=1;save();
+        recState=false;setRecUI(false);
+        confetti(10);toast('ضبط شد! حالا «پخش من» رو بزن و مقایسه کن');
+      };
+      mediaRec.start();
+      recState=true;setRecUI(true);buzz(30);
+      const ctx=new (window.AudioContext||window.webkitAudioContext)();
+      const src=ctx.createMediaStreamSource(stream);
+      const an=ctx.createAnalyser();an.fftSize=256;src.connect(an);
+      const buf=new Uint8Array(an.frequencyBinCount);
+      recT0=Date.now();
+      recTimer=setInterval(()=>{
+        an.getByteFrequencyData(buf);
+        const avg=buf.reduce((a,b)=>a+b)/buf.length;
+        $('levelBar').style.width=Math.min(100,avg*1.4)+'%';
+        const sec=Math.floor((Date.now()-recT0)/1000);
+        $('recStat').innerHTML=`در حال ضبط… <b style="color:var(--bad)">${fa(sec)}</b> ثانیه (حداکثر ۱۵)`;
+        if(sec>=15&&recState)stopRec();
+      },120);
+    }catch(e){toast('دسترسی به میکروفون ممکن نشد')}
+  }else stopRec();
+};
+ $('playBtn').onclick=()=>{if(audioEl){audioEl.currentTime=0;audioEl.play();toast('پخش صدای خودت…')}};
+ $('nextSent').onclick=()=>{pIdx++;renderTarget();resetRec();toast('جملهٔ جدید اومد!')};
+
+/* ═══════════ بازی خرد کردن جمله ═══════════ */
+let sbIdx=0,sbScore=0,sbAns=[];
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+function renderBuilder(){
+  const s=GAME[sbIdx%GAME.length];
+  const words=s.de.split(' ');
+  let sh=shuffle(words);
+  if(sh.join(' ')===s.de&&words.length>1)sh=shuffle(words);
+  sbAns=[];
+  $('sbFa').textContent=s.fa;
+  $('sbScore').textContent='درست: '+fa(sbScore);
+  $('sbNext').disabled=true;
+  const sl=$('sbSlots');sl.className='slots';
+  sl.innerHTML='<span class="hint">کلمه‌ها رو به ترتیب درست بچین…</span>';
+  $('sbChips').innerHTML=sh.map((w,i)=>`<button class="chip" data-w="${w}" data-i="${i}">${w}</button>`).join('');
+  $('sbChips').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{
+    if(c.style.visibility==='hidden')return;
+    sbAns.push(c.dataset.w);c.style.visibility='hidden';buzz();updateSlots();
+  });
+}
+function updateSlots(){
+  const s=GAME[sbIdx%GAME.length];
+  const sl=$('sbSlots');
+  sl.classList.remove('ok','no');
+  sl.innerHTML=sbAns.length?sbAns.map((w,i)=>`<span class="sslot" data-i="${i}">${w}</span>`).join(''):'<span class="hint">کلمه‌ها رو به ترتیب درست بچین…</span>';
+  sl.querySelectorAll('.sslot').forEach(x=>x.onclick=()=>{
+    const i=+x.dataset.i;const w=sbAns.splice(i,1)[0];
+    const c=[...$('sbChips').querySelectorAll('.chip')].find(c=>c.dataset.w===w&&c.style.visibility==='hidden');
+    if(c)c.style.visibility='visible';
+    buzz();updateSlots();
+  });
+  if(sbAns.length===s.de.split(' ').length)checkAnswer();
+}
+function checkAnswer(){
+  const s=GAME[sbIdx%GAME.length];
+  const sl=$('sbSlots');
+  if(sbAns.join(' ')===s.de){
+    sl.classList.add('ok');sbScore++;
+    $('sbScore').textContent='درست: '+fa(sbScore);
+    $('sbNext').disabled=false;confetti(20);buzz(40);toast('آفرین! دقیقاً همینه');
+  }else{
+    sl.classList.add('no');
+    toast('نزدیکه! دوباره بچین — یادت باشه فعل همیشه دومه');
+  }
+}
+ $('sbNext').onclick=()=>{sbIdx++;renderBuilder()};
+ $('sbReset').onclick=()=>renderBuilder();
+
+/* ═══════════ مرور فاصله‌دار ═══════════ */
+const SRS=[
+ {de:'trinken',fa:'نوشیدن',tr:'ترینکِن',due:'today'},
+ {de:'der Mann',fa:'مرد',tr:'دِر مان',due:'today'},
+ {de:'morgen',fa:'فردا',tr:'مورگِن',due:'tmr'},
+ {de:'war',fa:'بود',tr:'وار',due:'d3'},
+ {de:'vielleicht',fa:'شاید',tr:'فایلایش',due:'d3'},
+ {de:'immer',fa:'همیشه',tr:'ایمِر',due:'week'}
+];
+const DUE={today:['مرور امروز','b-today'],tmr:['فردا','b-tmr'],d3:['۳ روز بعد','b-d3'],week:['هفتهٔ بعد','b-week']};
+function renderSRS(){
+  const t=SRS.filter(x=>x.due==='today');
+  $('srsToday').innerHTML=t.map(x=>`
+   <div>
+     <div class="flip">
+       <div class="fin">
+         <div class="fface ffront"><b>${x.fa}</b><small>لمس کن و بچرخون</small></div>
+         <div class="fface fback"><b class="ltr">${x.de}</b><small>${x.tr}</small></div>
+       </div>
+     </div>
+     <div class="srsbtns">
+       <button class="btn gho2" data-r="no">یادم نبود</button>
+       <button class="btn pri" data-r="yes">یادم بود!</button>
+     </div>
+   </div>`).join('');
+  $('srsToday').querySelectorAll('.flip').forEach(f=>f.onclick=()=>{f.classList.toggle('on');buzz()});
+  $('srsToday').querySelectorAll('.srsbtns').forEach(sb=>{
+    sb.querySelectorAll('.btn').forEach(b=>b.onclick=()=>{
+      const outer=sb.parentElement,flip=sb.previousElementSibling;buzz(20);
+      if(b.dataset.r==='yes'){outer.innerHTML=`<div class="srsdone"><span class="material-icons">check_circle</span><small>شد! فردا دوباره</small></div>`;confetti(10);toast('تو حافظهٔ بلندت قطاری شد ✓')}
+      else{flip.classList.remove('on');flip.style.animation='shake .4s';setTimeout(()=>flip.style.animation='',450);toast('اشکالی نداره — تکرار، قلبِ متده')}
+    });
+  });
+  $('srsNext').innerHTML=SRS.filter(x=>x.due!=='today').map(x=>`
+    <div class="srsrow"><span class="ltr">${x.de}</span><span class="fa">${x.fa}</span><span class="badge ${DUE[x.due][1]}">${DUE[x.due][0]}</span></div>`).join('');
+}
+
+/* ═══════════ تب پیشرفت ═══════════ */
+function renderProgress(){
+  const words=wordsCount();
+  $('statGrid').innerHTML=[
+    ['local_fire_department',S.stats.streak,'روز پیوسته'],
+    ['school',words,'کلمه در جیب'],
+    ['schedule',S.stats.minutes,'دقیقه تمرین']
+  ].map(([ic,v,l])=>`<div class="stat"><span class="material-icons">${ic}</span><b>${fa(v)}</b><small>${l}</small></div>`).join('');
+  $('calGrid').innerHTML=S.cal.map((v,i)=>`<div class="cell ${v?'on':''} ${i===29?'today':''}"></div>`).join('');
+  const lbl=['ش','ی','د','س','چ','پ','ج'],mx=Math.max(...S.week);
+  $('weekChart').innerHTML=S.week.map((v,i)=>`
+    <div class="wcol"><span class="wval">${fa(v)}٪</span><div class="wbar ${v===mx?'hi':''}" data-h="${v}"></div><span class="wlbl">${lbl[i]}</span></div>`).join('');
+  setTimeout(()=>$('weekChart').querySelectorAll('.wbar').forEach(b=>b.style.height=(b.dataset.h*1.4)+'px'),80);
+  const ach=[
+    ['flag','شروع خوب',S.visited.length>0],
+    ['local_fire_department','۵ روز پیوسته',S.stats.streak>=5],
+    ['school','۵۰ کلمه',words>=50],
+    ['mic','اولین ضبط',S.flags.rec]
+  ];
+  $('achGrid').innerHTML=ach.map(([ic,t,won])=>`<div class="achd ${won?'won':''}"><span class="material-icons">${won?ic:'lock'}</span><small>${t}</small></div>`).join('');
+}
+
+/* ═══════════ تمرین: رندر کلی ═══════════ */
+function renderPractice(){renderTarget();resetRec();renderBuilder();renderSRS()}
+
+/* ═══════════ شروع ═══════════ */
+switchTab('coach');
+</script>
+</body>
+</html>
