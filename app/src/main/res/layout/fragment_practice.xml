@@ -12,15 +12,15 @@
         android:orientation="horizontal" android:layout_marginTop="8dp">
         <Button android:id="@+id/btn_add" android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:text="اضافه" />
-        <ImageButton android:id="@+id/btn_split" android:layout_width="48dp"
-            android:layout_height="48dp" android:src="@android:drawable/ic_menu_cut"
-            android:contentDescription="خرد کردن" android:layout_marginStart="8dp" />
-        <ImageButton android:id="@+id/btn_rec" android:layout_width="48dp"
-            android:layout_height="48dp" android:src="@android:drawable/ic_btn_speak_now"
-            android:contentDescription="ضبط میکروفون" android:layout_marginStart="8dp" />
-        <ImageButton android:id="@+id/btn_play" android:layout_width="48dp"
-            android:layout_height="48dp" android:src="@android:drawable/ic_media_play"
-            android:contentDescription="پخش" android:layout_marginStart="8dp" />
+        <Button android:id="@+id/btn_split" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="خرد کن"
+            android:layout_marginStart="8dp" />
+        <Button android:id="@+id/btn_rec" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="🎤 ضبط"
+            android:layout_marginStart="8dp" />
+        <Button android:id="@+id/btn_play" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="▶ پخش"
+            android:layout_marginStart="8dp" />
     </LinearLayout>
     <TextView android:id="@+id/due_text" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:textSize="14sp" android:textColor="#1565C0"

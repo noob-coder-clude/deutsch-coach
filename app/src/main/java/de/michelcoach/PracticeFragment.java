@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,8 +44,8 @@ public class PracticeFragment extends Fragment {
 
         EditText input = root.findViewById(R.id.edit_practice);
         Button add = root.findViewById(R.id.btn_add);
-        ImageButton recBtn = root.findViewById(R.id.btn_rec);
-        ImageButton playBtn = root.findViewById(R.id.btn_play);
+        Button recBtn = root.findViewById(R.id.btn_rec);
+        Button playBtn = root.findViewById(R.id.btn_play);
         Button splitBtn = root.findViewById(R.id.btn_split);
         TextView due = root.findViewById(R.id.due_text);
 
