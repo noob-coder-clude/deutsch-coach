@@ -1,14 +1,13 @@
 package de.michelcoach;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
@@ -24,10 +23,8 @@ public class BookFragment extends Fragment {
     private JSONObject course;
     private Store store;
     private int curLekt = 1;
-    private boolean hideDe = true; // no-cheat: hide German column by default
-
+    private boolean hideDe = true;
     private LinearLayout list;
-    private TextView status;
 
     @Override
     public View onCreateView(LayoutInflater inf, ViewGroup vg, Bundle b) {
@@ -36,35 +33,27 @@ public class BookFragment extends Fragment {
         loadCourse();
         hideDe = store.getBool("no_cheat", true);
 
-        Spinner sp = root.findViewById(R.id.book_spin);
-        List<String> names = new ArrayList<>();
-        JSONArray ls = course.optJSONArray("lektions");
-        for (int i = 0; i < ls.length(); i++)
-            names.add("لکسیون " + ls.optJSONObject(i).optInt("num"));
-        ArrayAdapter<String> ad = new ArrayAdapter<>(getContext(),
-            android.R.layout.simple_spinner_item, names);
-        ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sp.setAdapter(ad);
-        sp.setSelection(Math.min(store.getPhase() - 1, names.size() - 1));
-        sp.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(android.widget.AdapterView<?> a, View v, int i, long id) {
-                curLekt = i + 1; store.setPhase(curLekt); render();
-            }
-            public void onNothingSelected(android.widget.AdapterView<?> a) {}
-        });
-
-        Button toggle = root.findViewById(R.id.book_toggle);
-        toggle.setText(hideDe ? "نشون دادن آلمانی" : "مخفی کردن آلمانی (جلوگیری تقلب)");
-        toggle.setOnClickListener(v -> {
+        // mask switch
+        View sw = root.findViewById(R.id.mask_sw);
+        sw.setBackgroundResource(0);
+        sw.setBackgroundColor(hideDe ? 0xFF1565C0 : 0xFFD6DEE8);
+        sw.setOnClickListener(v -> {
             hideDe = !hideDe;
             store.putBool("no_cheat", hideDe);
-            toggle.setText(hideDe ? "نشون دادن آلمانی" : "مخفی کردن آلمانی (جلوگیری تقلب)");
-            render();
+            sw.setBackgroundColor(hideDe ? 0xFF1565C0 : 0xFFD6DEE8);
+            render(root);
         });
 
-        list = root.findViewById(R.id.book_list);
-        status = root.findViewById(R.id.book_status);
-        render();
+        list = root.findViewById(R.id.word_list);
+        root.findViewById(R.id.l_prev).setOnClickListener(v -> {
+            if (curLekt > 1) { curLekt--; store.setPhase(curLekt); render(root); }
+        });
+        root.findViewById(R.id.l_next).setOnClickListener(v -> {
+            int max = course.optJSONArray("lektions").length();
+            if (curLekt < max) { curLekt++; store.setPhase(curLekt); render(root); }
+        });
+
+        render(root);
         return root;
     }
 
@@ -75,49 +64,62 @@ public class BookFragment extends Fragment {
             byte[] buf = new byte[size];
             is.read(buf); is.close();
             course = new JSONObject(new String(buf, StandardCharsets.UTF_8));
-        } catch (Exception e) {
-            course = new JSONObject();
-        }
+        } catch (Exception e) { course = new JSONObject(); }
     }
 
-    private void render() {
-        list.removeAllViews();
+    private void render(View root) {
+        // pills
+        LinearLayout pills = root.findViewById(R.id.lpills);
+        pills.removeAllViews();
         JSONArray ls = course.optJSONArray("lektions");
-        if (ls == null) return;
+        for (int i = 0; i < ls.length(); i++) {
+            int num = ls.optJSONObject(i).optInt("num");
+            Button p = new Button(getContext());
+            p.setText(fa(num));
+            p.setTextSize(12.5f); p.setTypeface(null, android.graphics.Typeface.BOLD);
+            if (num == curLekt) p.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFF1565C0));
+            else { p.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFFFFFFFF)); ((Button)p).setTextColor(0xFF5A6B7D); }
+            final int n = num;
+            p.setOnClickListener(v -> { curLekt = n; store.setPhase(n); render(root); });
+            pills.addView(p);
+        }
+
+        // head
         JSONObject L = null;
         for (int i = 0; i < ls.length(); i++)
             if (ls.optJSONObject(i).optInt("num") == curLekt) { L = ls.optJSONObject(i); break; }
         if (L == null) return;
+        ((TextView) root.findViewById(R.id.lhead_num)).setText(fa(curLekt));
+        ((TextView) root.findViewById(R.id.lhead_title)).setText("لکسیون " + fa(curLekt));
+        ((TextView) root.findViewById(R.id.lhead_desc)).setText(L.optInt("items") + " مورد");
+
+        // list
+        list.removeAllViews();
         JSONArray items = L.optJSONArray("items");
-        int hard = 0;
         for (int i = 0; i < items.length(); i++) {
             JSONObject it = items.optJSONObject(i);
             String de = it.optString("de");
             String fa = it.optString("fa");
-            String key = Store.key(de);
 
             LinearLayout row = new LinearLayout(getContext());
             row.setOrientation(LinearLayout.VERTICAL);
-            row.setPadding(0, 10, 0, 10);
+            row.setPadding(0, 12, 0, 12);
 
-            TextView faTv = new TextView(getContext());
-            faTv.setText("فارسی: " + fa);
-            faTv.setTextSize(15);
-            row.addView(faTv);
+            TextView fa_tv = new TextView(getContext());
+            fa_tv.setText("فارسی: " + fa); fa_tv.setTextSize(15);
+            row.addView(fa_tv);
 
-            TextView deTv = new TextView(getContext());
-            deTv.setText("آلمانی: " + (hideDe ? "•••••• (مخفی)" : de));
-            deTv.setTextSize(15);
-            deTv.setTextColor(0xFF1565C0);
-            row.addView(deTv);
+            TextView de_tv = new TextView(getContext());
+            de_tv.setText("آلمانی: " + (hideDe ? "•••••• (مخفی)" : de));
+            de_tv.setTextSize(15); de_tv.setTextColor(0xFF1565C0);
+            row.addView(de_tv);
 
-            // split tool
             if (!hideDe) {
                 String[] parts = de.split("\\s+");
                 if (parts.length > 1) {
                     TextView sp = new TextView(getContext());
                     sp.setText("خرد شده: " + String.join(" | ", parts));
-                    sp.setTextSize(13);
+                    sp.setTextSize(13); sp.setTextColor(Color.GRAY);
                     row.addView(sp);
                 }
             }
@@ -126,20 +128,21 @@ public class BookFragment extends Fragment {
             cb.setText("برام سخته (بره توی تمرین)");
             boolean marked = store.getLines().contains(de);
             cb.setChecked(marked);
-            if (marked) hard++;
             final String fDe = de;
             cb.setOnCheckedChangeListener((v, c) -> {
-                if (c) { store.addLine(fDe); }
-                else {
-                    List<String> lines = store.getLines();
-                    lines.remove(fDe);
-                    store.setLines(lines);
-                }
-                render();
+                if (c) store.addLine(fDe);
+                else { List<String> lines = store.getLines(); lines.remove(fDe); store.setLines(lines); }
+                render(root);
             });
             row.addView(cb);
             list.addView(row);
         }
-        status.setText("لکسیون " + curLekt + " — " + items.length() + " مورد | سخت‌های انتخابی: " + hard);
+    }
+
+    private String fa(int n) {
+        return String.valueOf(n).replace('0', '۰').replace('1', '۱')
+            .replace('2', '۲').replace('3', '۳').replace('4', '۴')
+            .replace('5', '۵').replace('6', '۶').replace('7', '۷')
+            .replace('8', '۸').replace('9', '۹');
     }
 }
