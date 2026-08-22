@@ -6,5 +6,9 @@
         <item name="colorAccent">#1565C0</item>
         <item name="android:colorBackground">#EDF2F8</item>
         <item name="android:statusBarColor">#0D47A1</item>
+        <!-- Tab text colors -->
+        <item name="tabIndicatorColor">#FFFFFF</item>
+        <item name="tabSelectedTextColor">#FFFFFF</item>
+        <item name="tabTextColor">#BBDEFB</item>
     </style>
 </resources>

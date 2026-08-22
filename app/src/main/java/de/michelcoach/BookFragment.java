@@ -114,6 +114,14 @@ public class BookFragment extends Fragment {
             de_tv.setTextSize(15); de_tv.setTextColor(0xFF1565C0);
             row.addView(de_tv);
 
+            String ex = it.optString("ex");
+            if (!ex.isEmpty()) {
+                TextView ex_tv = new TextView(getContext());
+                ex_tv.setText("مثال: " + (hideDe ? "•••••• (مخفی)" : ex));
+                ex_tv.setTextSize(13); ex_tv.setTextColor(Color.GRAY);
+                row.addView(ex_tv);
+            }
+
             if (!hideDe) {
                 String[] parts = de.split("\\s+");
                 if (parts.length > 1) {

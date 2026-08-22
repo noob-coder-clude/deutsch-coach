@@ -7,11 +7,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.speech.tts.TextToSpeech;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class PracticeFragment extends Fragment {
     private static final int REQ_REC = 101;
@@ -33,6 +34,7 @@ public class PracticeFragment extends Fragment {
     private boolean recording = false;
     private String currentLine = "";
     private Handler ui = new Handler(Looper.getMainLooper());
+    private TextToSpeech tts;
 
     // split game
     private static final String[] GAME = {
@@ -49,6 +51,9 @@ public class PracticeFragment extends Fragment {
     public View onCreateView(LayoutInflater inf, ViewGroup vg, Bundle b) {
         View root = inf.inflate(R.layout.fragment_practice, vg, false);
         store = new Store(getContext());
+        tts = new TextToSpeech(getContext(), status -> {
+            if (status == TextToSpeech.SUCCESS) tts.setLanguage(Locale.GERMAN);
+        });
         setupMic(root);
         setupSplit(root);
         setupSR(root);
@@ -69,7 +74,10 @@ public class PracticeFragment extends Fragment {
         fa.setText("می‌خواهم آلمانی یاد بگیرم.");
         de.setText(GAME[0]);
 
-        tts.setOnClickListener(v -> Toast.makeText(getContext(), "گوش کن (TTS تحت پیاده‌سازی)", Toast.LENGTH_SHORT).show());
+        tts.setOnClickListener(v -> {
+            if (this.tts != null) this.tts.speak(GAME[pIdx], TextToSpeech.QUEUE_FLUSH, null, "de");
+            else Toast.makeText(getContext(), "TTS در دسترس نیست", Toast.LENGTH_SHORT).show();
+        });
         recBtn.setOnClickListener(v -> {
             if (!recording) startRec(root); else stopRec(root);
         });
@@ -95,6 +103,8 @@ public class PracticeFragment extends Fragment {
             rec.setAudioSource(MediaRecorder.AudioSource.MIC);
             rec.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
             rec.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+            rec.setAudioEncodingBitRate(192000);
+            rec.setAudioSamplingRate(44100);
             rec.setOutputFile(recFile.getAbsolutePath());
             rec.prepare(); rec.start();
             recording = true; currentLine = "practice";
