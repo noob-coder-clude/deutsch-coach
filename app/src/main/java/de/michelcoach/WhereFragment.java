@@ -93,11 +93,12 @@ public class WhereFragment extends Fragment {
         box.addView(d);
 
         Button go = new Button(getContext());
-        if (AX_GO[max] > 0) {
-            go.setText("برو به لکسیون " + fa(AX_GO[max]));
+        final int goMax = max;
+        if (AX_GO[goMax] > 0) {
+            go.setText("برو به لکسیون " + fa(AX_GO[goMax]));
             go.setOnClickListener(v -> {
-                new Store(getContext()).setPhase(AX_GO[max]);
-                Toast("لکسیون " + fa(AX_GO[max]) + " — تب جزوه");
+                new Store(getContext()).setPhase(AX_GO[goMax]);
+                Toast("لکسیون " + fa(AX_GO[goMax]) + " — تب جزوه");
             });
         } else {
             go.setText("برو به تمرین");
