@@ -6,9 +6,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class SectionsPagerAdapter extends FragmentStateAdapter {
-    public SectionsPagerAdapter(@NonNull FragmentActivity fa) {
-        super(fa);
-    }
+    public SectionsPagerAdapter(@NonNull FragmentActivity fa) { super(fa); }
 
     @NonNull
     @Override
@@ -16,12 +14,11 @@ public class SectionsPagerAdapter extends FragmentStateAdapter {
         switch (position) {
             case 0: return new CoachFragment();
             case 1: return new WhereFragment();
-            default: return new PracticeFragment();
+            case 2: return new PracticeFragment();
+            default: return new ProgressFragment();
         }
     }
 
     @Override
-    public int getItemCount() {
-        return 3;
-    }
+    public int getItemCount() { return 4; }
 }

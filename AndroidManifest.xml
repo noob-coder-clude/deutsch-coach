@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
+    package="de.michelcoach"
+    android:versionCode="2"
+    android:versionName="2.0">
+    <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="34" />
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="Deutsch Coach"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DeutschCoach">
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

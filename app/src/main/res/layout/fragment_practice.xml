@@ -3,15 +3,28 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical" android:padding="16dp">
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="جمله‌های سختی که می‌خوای روون کنی (خودت وارد کن):"
+        android:text="جمله‌های سخت خودت (بدون نمره‌دهی کلمه‌به‌کلمه):"
         android:textSize="15sp" />
     <EditText android:id="@+id/edit_practice" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:hint="مثلاً: Können Sie mit mir kommen"
         android:layout_marginTop="8dp" />
-    <Button android:id="@+id/btn_add" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:text="اضافه کن"
-        android:layout_marginTop="8dp" />
-    <TextView android:id="@+id/practice_list" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:textSize="15sp"
-        android:layout_marginTop="16dp" android:lineSpacingExtra="4dp" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginTop="8dp">
+        <Button android:id="@+id/btn_add" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="اضافه" />
+        <ImageButton android:id="@+id/btn_split" android:layout_width="48dp"
+            android:layout_height="48dp" android:src="@android:drawable/ic_menu_cut"
+            android:contentDescription="خرد کردن" android:layout_marginStart="8dp" />
+        <ImageButton android:id="@+id/btn_rec" android:layout_width="48dp"
+            android:layout_height="48dp" android:src="@android:drawable/ic_btn_speak_now"
+            android:contentDescription="ضبط میکروفون" android:layout_marginStart="8dp" />
+        <ImageButton android:id="@+id/btn_play" android:layout_width="48dp"
+            android:layout_height="48dp" android:src="@android:drawable/ic_media_play"
+            android:contentDescription="پخش" android:layout_marginStart="8dp" />
+    </LinearLayout>
+    <TextView android:id="@+id/due_text" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:textSize="14sp" android:textColor="#1565C0"
+        android:layout_marginTop="12dp" android:lineSpacingExtra="4dp" />
+    <ListView android:id="@+id/practice_list" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1" android:layout_marginTop="12dp" />
 </LinearLayout>

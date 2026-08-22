@@ -9,8 +9,18 @@
         <LinearLayout android:id="@+id/steps" android:layout_width="match_parent"
             android:layout_height="wrap_content" android:orientation="vertical"
             android:layout_marginTop="12dp" />
+        <CheckBox android:id="@+id/cb_nocheat" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="قانون تقلب‌ممنوع رو قبول دارم"
+            android:layout_marginTop="12dp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="لکسیون فعلی:" android:layout_marginTop="12dp" />
+        <Spinner android:id="@+id/spin_phase" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="4dp" />
         <CheckBox android:id="@+id/cb_done" android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:text="امروز انجامش دادم"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="12dp" />
+        <TextView android:id="@+id/coach_tip" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textSize="14sp"
+            android:layout_marginTop="12dp" android:textColor="#1565C0" />
     </LinearLayout>
 </ScrollView>
