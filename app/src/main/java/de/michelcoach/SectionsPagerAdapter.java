@@ -14,11 +14,12 @@ public class SectionsPagerAdapter extends FragmentStateAdapter {
         switch (position) {
             case 0: return new CoachFragment();
             case 1: return new WhereFragment();
-            case 2: return new PracticeFragment();
+            case 2: return new BookFragment();
+            case 3: return new PracticeFragment();
             default: return new ProgressFragment();
         }
     }
 
     @Override
-    public int getItemCount() { return 4; }
+    public int getItemCount() { return 5; }
 }

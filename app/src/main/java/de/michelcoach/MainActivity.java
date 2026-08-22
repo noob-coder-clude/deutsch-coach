@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         vp.setAdapter(new SectionsPagerAdapter(this));
 
-        String[] titles = {"مربی", "کجای مسیر", "تمرین", "پیشرفت"};
+        String[] titles = {"مربی", "کجای مسیر", "جزوه", "تمرین", "پیشرفت"};
         new TabLayoutMediator(tabs, vp, (tab, pos) -> tab.setText(titles[pos])).attach();
     }
 }
