@@ -4,38 +4,53 @@
    "num": 1,
    "items": [
     {
-     "de": "heute Abend",
-     "fa": "امروز عصر",
+     "de": "wollen Sie heute Abend mit mir",
+     "fa": "میخواهید شما امروز عصر با من بیاید؟",
      "ex": ""
     },
     {
-     "de": "wir kommen",
-     "fa": "ما می آییم",
+     "de": "kommen?",
+     "fa": "میخواهید شما امروز عصر با من بیاید؟",
      "ex": ""
     },
     {
-     "de": "nicht Not",
-     "fa": "فعل را منفی می کند",
+     "de": "es tut mir leid, aber ich kann Sie",
+     "fa": "متأسفم، اما من نمی توانم شما را بفهمم",
      "ex": ""
     },
     {
-     "de": "wir verstehen Sie ما",
-     "fa": "شما را می فهمیم",
+     "de": "nicht verstehen",
+     "fa": "متأسفم، اما من نمی توانم شما را بفهمم",
      "ex": ""
     },
     {
-     "de": "wir verstehen Sie nicht",
-     "fa": "ما شما را نمی فهمیم",
+     "de": "aber ich kann nicht lange hier",
+     "fa": "اما من نمی توانم اینجا زیاد بمانم",
      "ex": ""
     },
     {
-     "de": "es tut mir leid",
-     "fa": "متأسفم",
+     "de": "bleiben",
+     "fa": "اما من نمی توانم اینجا زیاد بمانم",
      "ex": ""
     },
     {
-     "de": "verstehen Sie mich?",
-     "fa": "شما من را می فهمید؟",
+     "de": "es tut mir leid, aber ich kann es nicht",
+     "fa": "متأسفم، اما من نمی توانم آن را پیدا کنم",
+     "ex": ""
+    },
+    {
+     "de": "finden",
+     "fa": "متأسفم، اما من نمی توانم آن را پیدا کنم",
+     "ex": ""
+    },
+    {
+     "de": "ich weiß nicht wo es ist, ich kann es",
+     "fa": "من نمی دانم آن کجاست، من نمی توانم آن را پیدا کنم",
+     "ex": ""
+    },
+    {
+     "de": "nicht finden",
+     "fa": "من نمی دانم آن کجاست، من نمی توانم آن را پیدا کنم",
      "ex": ""
     }
    ]
@@ -44,18 +59,153 @@
    "num": 2,
    "items": [
     {
-     "de": "wir haben",
-     "fa": "ماداریم",
+     "de": "warum können Sie mich nicht",
+     "fa": "چرا نمیتونید شما من را بفهمید؟",
      "ex": ""
     },
     {
-     "de": "Können Sie mit mir kommen?",
-     "fa": "می توانید شما با منبیایید؟",
+     "de": "verstehen?",
+     "fa": "چرا نمیتونید شما من را بفهمید؟",
      "ex": ""
     },
     {
-     "de": "mit mir",
-     "fa": "با من",
+     "de": "warum können Sie es mir jetzt nicht",
+     "fa": "چرا نمی توانید شما آن را اکنون به من بیاورید؟",
+     "ex": ""
+    },
+    {
+     "de": "bringen?",
+     "fa": "چرا نمی توانید شما آن را اکنون به من بیاورید؟",
+     "ex": ""
+    },
+    {
+     "de": "es tut mir leid, aber ich habe es nicht",
+     "fa": "متأسفم، اما من ندارم آن را اکنون برای شما",
+     "ex": ""
+    },
+    {
+     "de": "jetzt für Sie",
+     "fa": "متأسفم، اما من ندارم آن را اکنون برای شما",
+     "ex": ""
+    },
+    {
+     "de": "ich kann es Ihnen heute nicht",
+     "fa": "من نمی توانم آن را برای شما امروز بیاورم، چون من",
+     "ex": ""
+    },
+    {
+     "de": "bringen, denn ich habe es nicht",
+     "fa": "من نمی توانم آن را برای شما امروز بیاورم، چون من",
+     "ex": ""
+    },
+    {
+     "de": "aber Ich kann es Ihnen heute nicht",
+     "fa": "اما من نمی توانم آن را امروز به شما بدهم ، چون من آن",
+     "ex": ""
+    },
+    {
+     "de": "geben, denn ich habe es nicht",
+     "fa": "اما من نمی توانم آن را امروز به شما بدهم ، چون من آن",
+     "ex": ""
+    },
+    {
+     "de": "wann können Sie es mir bringen,",
+     "fa": "کی میتوانید شما آن را به من بیاورید ، چون من نیاز",
+     "ex": ""
+    },
+    {
+     "de": "denn ich brauche es heute",
+     "fa": "کی میتوانید شما آن را به من بیاورید ، چون من نیاز",
+     "ex": ""
+    },
+    {
+     "de": "ich will es heute haben, denn ich",
+     "fa": "من می خواهم آن را امروز داشته باشم، چون من آن را",
+     "ex": ""
+    },
+    {
+     "de": "brauche es heute",
+     "fa": "من می خواهم آن را امروز داشته باشم، چون من آن را",
+     "ex": ""
+    },
+    {
+     "de": "Um wie viel Uhr wollen Sie es",
+     "fa": "در چه ساعتی می خواهید شما آن را داشته باشید؟",
+     "ex": ""
+    },
+    {
+     "de": "haben?",
+     "fa": "در چه ساعتی می خواهید شما آن را داشته باشید؟",
+     "ex": ""
+    },
+    {
+     "de": "Um wie viel Uhr können Sie heute",
+     "fa": "در چهساعتی می توانید شما امروز عصر اینجا باشید؟",
+     "ex": ""
+    },
+    {
+     "de": "Abend hier sein?",
+     "fa": "در چهساعتی می توانید شما امروز عصر اینجا باشید؟",
+     "ex": ""
+    },
+    {
+     "de": "Um wie viel Uhr werden Sie hier",
+     "fa": "در چه ساعتی شما اینجا خواهید بود؟",
+     "ex": ""
+    },
+    {
+     "de": "sein?",
+     "fa": "در چه ساعتی شما اینجا خواهید بود؟",
+     "ex": ""
+    },
+    {
+     "de": "Um wie viel Uhr werden Sie morgen",
+     "fa": "در چه ساعتی شما فردا خواهید رسید؟",
+     "ex": ""
+    },
+    {
+     "de": "ankommen?",
+     "fa": "در چه ساعتی شما فردا خواهید رسید؟",
+     "ex": ""
+    },
+    {
+     "de": "Um wie viel Uhr können Sie morgen",
+     "fa": "در چه ساعتی می توانید شما فردا اینجا باشید؟",
+     "ex": ""
+    },
+    {
+     "de": "hier sein?",
+     "fa": "در چه ساعتی می توانید شما فردا اینجا باشید؟",
+     "ex": ""
+    },
+    {
+     "de": "wie lange können Sie heute hier",
+     "fa": "چه مدت می توانید شما امروز اینجا بمانید؟",
+     "ex": ""
+    },
+    {
+     "de": "bleiben?",
+     "fa": "چه مدت می توانید شما امروز اینجا بمانید؟",
+     "ex": ""
+    },
+    {
+     "de": "wollen Sie mir sagen, wo es ist, denn",
+     "fa": "می خواهید شما به من بگویید کجا است آن، چون من",
+     "ex": ""
+    },
+    {
+     "de": "ich kann es nicht finden",
+     "fa": "می خواهید شما به من بگویید کجا است آن، چون من",
+     "ex": ""
+    },
+    {
+     "de": "es tut mir leid, aber ich weiß nicht,",
+     "fa": "متاسفم، اما مننمیدانم کجا است آن، من نمی توانم آن",
+     "ex": ""
+    },
+    {
+     "de": "wo es ist, ich kann es nicht finden",
+     "fa": "متاسفم، اما مننمیدانم کجا است آن، من نمی توانم آن",
      "ex": ""
     }
    ]
@@ -64,28 +214,83 @@
    "num": 3,
    "items": [
     {
-     "de": "ich will dorthin gehen",
-     "fa": "من می خواهم به آنجا بروم",
+     "de": "aber ich kann nicht heute dorthin",
+     "fa": "اما من نمی توانم امروز به آنجا بروم",
      "ex": ""
     },
     {
-     "de": "ich werde sehr beschäftigt sein",
-     "fa": "من خیلی مشغول خواهم بود",
+     "de": "gehen",
+     "fa": "اما من نمی توانم امروز به آنجا بروم",
      "ex": ""
     },
     {
-     "de": "warten",
-     "fa": "منتظر بودن",
+     "de": "wie lange können wir heute hier",
+     "fa": "چه مدت می توانیم ما امروز اینجا بمانیم؟",
      "ex": ""
     },
     {
-     "de": "schon پیشاپیش / فی الواقع / همواره",
-     "fa": "(معادل دقیق در فارسی",
+     "de": "bleiben?",
+     "fa": "چه مدت می توانیم ما امروز اینجا بمانیم؟",
      "ex": ""
     },
     {
-     "de": "er bringt es mir",
-     "fa": "او آن را به من می آورد",
+     "de": "wollen Sie bitte auf mich morgen",
+     "fa": "میشه لطفأ شما فردا اینجا منتظر من باشید؟",
+     "ex": ""
+    },
+    {
+     "de": "hier warten?",
+     "fa": "میشه لطفأ شما فردا اینجا منتظر من باشید؟",
+     "ex": ""
+    },
+    {
+     "de": "wir werden es nicht kaufen, denn es",
+     "fa": "ما آن را نخواهیم خرید، چون آن خیلی گران است",
+     "ex": ""
+    },
+    {
+     "de": "ist sehr teuer",
+     "fa": "ما آن را نخواهیم خرید، چون آن خیلی گران است",
+     "ex": ""
+    },
+    {
+     "de": "wir werden es kaufen, denn wir",
+     "fa": "ما آن را خواهیم خرید، چون ما میخواهیم آن را داشته",
+     "ex": ""
+    },
+    {
+     "de": "wollen es haben",
+     "fa": "ما آن را خواهیم خرید، چون ما میخواهیم آن را داشته",
+     "ex": ""
+    },
+    {
+     "de": "ich werde",
+     "fa": "ندارد)",
+     "ex": ""
+    },
+    {
+     "de": "er wird",
+     "fa": "ندارد)",
+     "ex": ""
+    },
+    {
+     "de": "sie wird",
+     "fa": "ندارد)",
+     "ex": ""
+    },
+    {
+     "de": "es wird",
+     "fa": "ندارد)",
+     "ex": ""
+    },
+    {
+     "de": "wollen Sie bitte es mir morgen",
+     "fa": "میشه شما لطفأ آن را به من فردا بیاورید",
+     "ex": ""
+    },
+    {
+     "de": "bringen",
+     "fa": "میشه شما لطفأ آن را به من فردا بیاورید",
      "ex": ""
     }
    ]
@@ -94,38 +299,143 @@
    "num": 4,
    "items": [
     {
-     "de": "ich möchte من دوستدارم",
-     "fa": "(می خواهم)",
+     "de": "ich werde gern mit Ihnen dorthin",
+     "fa": "من دوست خواهم داشت با شما به آنجا بروم",
      "ex": ""
     },
     {
-     "de": "es kann",
-     "fa": "آن می تواند",
+     "de": "gehen",
+     "fa": "من دوست خواهم داشت با شما به آنجا بروم",
      "ex": ""
     },
     {
-     "de": "danke sehr, danke schön",
-     "fa": "خیلی ممنون",
+     "de": "ich bin sehr müde und ich gehe jetzt",
+     "fa": "من خیلی خسته هستم و من میروم به سمت خانه الان و",
      "ex": ""
     },
     {
-     "de": "Können Sie mir sagen?",
-     "fa": "می توانید شما به من بگویید؟",
+     "de": "nach Hause und ich werde heute",
+     "fa": "من خیلی خسته هستم و من میروم به سمت خانه الان و",
      "ex": ""
     },
     {
-     "de": "ich verstehe Sie nicht",
-     "fa": "من شما را نمی فهمم",
+     "de": "Abend zu Hause bleiben",
+     "fa": "من خیلی خسته هستم و من میروم به سمت خانه الان و",
      "ex": ""
     },
     {
-     "de": "es kostet",
-     "fa": "آن هزینه دارد",
+     "de": "ich werde heute Abend zu Hause",
+     "fa": "من در خانه امروز عصر خواهم ماند چون من خیلی",
      "ex": ""
     },
     {
-     "de": "ich möchte wissen, wieviel es kostet",
-     "fa": "من می خواهم بدانم ، هزینه آن چقدر می شود",
+     "de": "bleiben, denn ich bin sehr müde",
+     "fa": "من در خانه امروز عصر خواهم ماند چون من خیلی",
+     "ex": ""
+    },
+    {
+     "de": "ich weiß nicht, was Sie sagen, weil",
+     "fa": "من نمی دانم چه چیزی شما می گویید، چون من شما را",
+     "ex": ""
+    },
+    {
+     "de": "ich Sie nicht verstehen kann",
+     "fa": "من نمی دانم چه چیزی شما می گویید، چون من شما را",
+     "ex": ""
+    },
+    {
+     "de": "ich werde zu Hause bleiben, weil ich",
+     "fa": "من در خانه خواهم ماند، چون من خیلی خسته هستم",
+     "ex": ""
+    },
+    {
+     "de": "sehr müde bin",
+     "fa": "من در خانه خواهم ماند، چون من خیلی خسته هستم",
+     "ex": ""
+    },
+    {
+     "de": "ich kann es nicht tun, weil ich heute",
+     "fa": "من نمی توانم آن را انجام دهم، چونمن امروز خیلی",
+     "ex": ""
+    },
+    {
+     "de": "sehr beschäftigt bin",
+     "fa": "من نمی توانم آن را انجام دهم، چونمن امروز خیلی",
+     "ex": ""
+    },
+    {
+     "de": "ich kann es nicht tun, weil ich sehr",
+     "fa": "من نمی توانم آن را انجام دهم، چون من خیلی مشغول",
+     "ex": ""
+    },
+    {
+     "de": "beschäftigt sein werde",
+     "fa": "من نمی توانم آن را انجام دهم، چون من خیلی مشغول",
+     "ex": ""
+    },
+    {
+     "de": "weil ich mit Ihnen heute Abend nicht",
+     "fa": "چون من با شما امروز عصر نمی توانم بیاییم",
+     "ex": ""
+    },
+    {
+     "de": "kommen kann",
+     "fa": "چون من با شما امروز عصر نمی توانم بیاییم",
+     "ex": ""
+    },
+    {
+     "de": "wollen Sie mir sagen, wieviel es",
+     "fa": "می خواهید شما به من بگویید هزینه آن قدر می شود؟",
+     "ex": ""
+    },
+    {
+     "de": "kostet",
+     "fa": "می خواهید شما به من بگویید هزینه آن قدر می شود؟",
+     "ex": ""
+    },
+    {
+     "de": "ich will wissen, um wie viel Uhr ich",
+     "fa": "من می خواهم بدانم در چه ساعتی من آن را می توانم",
+     "ex": ""
+    },
+    {
+     "de": "es haben kann",
+     "fa": "من می خواهم بدانم در چه ساعتی من آن را می توانم",
+     "ex": ""
+    },
+    {
+     "de": "können Sie mir sagen, um wir viel",
+     "fa": "می توانید شما به منبگویید، در چه ساعتی من آن را",
+     "ex": ""
+    },
+    {
+     "de": "Uhr ich es haben kann",
+     "fa": "می توانید شما به منبگویید، در چه ساعتی من آن را",
+     "ex": ""
+    },
+    {
+     "de": "wollen Sie mir sagen, wann ich es",
+     "fa": "می خواهید شما به من بگویید ، چه زمانی من آن را می",
+     "ex": ""
+    },
+    {
+     "de": "haben kann",
+     "fa": "می خواهید شما به من بگویید ، چه زمانی من آن را می",
+     "ex": ""
+    },
+    {
+     "de": "es tut mir leid, aber ich kann jetzt",
+     "fa": "متاسفم، اما من نمی توانم اکنون به شما بگویم، چرا من",
+     "ex": ""
+    },
+    {
+     "de": "Ihnen nicht sagen, warum ich es",
+     "fa": "متاسفم، اما من نمی توانم اکنون به شما بگویم، چرا من",
+     "ex": ""
+    },
+    {
+     "de": "heute machen muss",
+     "fa": "متاسفم، اما من نمی توانم اکنون به شما بگویم، چرا من",
      "ex": ""
     }
    ]
@@ -134,63 +444,53 @@
    "num": 5,
    "items": [
     {
-     "de": "ich habe eine Frage",
-     "fa": "من یک سوال دارم",
+     "de": "warum interessieren Sie sich nicht",
+     "fa": "چرا به کتاب علاقه ندارید؟",
      "ex": ""
     },
     {
-     "de": "ich will dorthin gehen",
-     "fa": "من می خواهم به آنجا بروم",
+     "de": "für Buch?",
+     "fa": "چرا به کتاب علاقه ندارید؟",
      "ex": ""
     },
     {
-     "de": "alles geht heute viel besser",
-     "fa": "همه چیز امروز خیلی بهتر است",
+     "de": "ich möchte die Gelegenheit haben, es",
+     "fa": "من دوست دارم فرصت داشته باشم آن را ببینم",
      "ex": ""
     },
     {
-     "de": "wie fühlen Sie sich? چگونه احساس می کنید شما ؟",
-     "fa": "/ چگونه حسی دارید",
+     "de": "zu sehen",
+     "fa": "من دوست دارم فرصت داشته باشم آن را ببینم",
      "ex": ""
     },
     {
-     "de": "ich wasche es",
-     "fa": "من آن را می شویم",
+     "de": "ich habe nicht immer die",
+     "fa": "من همیشه فرصت ندارم آن را ببینم",
      "ex": ""
     },
     {
-     "de": "sollen",
-     "fa": "باید (اما نه با اجبار زیاد– در مواقع توصیه و پیشنهاد)",
+     "de": "Gelegenheit, es zu sehen",
+     "fa": "من همیشه فرصت ندارم آن را ببینم",
      "ex": ""
     },
     {
-     "de": "Sie sollen sich beeilen",
-     "fa": "شما باید عجله کنید /",
-     "ex": "شما بهتره عجله کنید"
-    },
-    {
-     "de": "interessieren علاقه داشتن",
-     "fa": "/ علاقه مند شدن",
+     "de": "ich habe nicht oft die Gelegenheit, es",
+     "fa": "من اغلب فرصت ندارم آن را ببینم",
      "ex": ""
     },
     {
-     "de": "er interessiert sich",
-     "fa": "اوعلاقه دارد",
+     "de": "zu sehen",
+     "fa": "من اغلب فرصت ندارم آن را ببینم",
      "ex": ""
     },
     {
-     "de": "es freut mich",
-     "fa": "آن مرا خوشحال می کند",
+     "de": "es ist nicht möglich, heute dorthin zu",
+     "fa": "آن ممکن نیست امروز به آنجا رفتن",
      "ex": ""
     },
     {
-     "de": "es ist nicht möglich",
-     "fa": "آن ممکن نیست",
-     "ex": ""
-    },
-    {
-     "de": "es ist nicht so wichtig",
-     "fa": "آن خیلی مهم نیست",
+     "de": "gehen",
+     "fa": "آن ممکن نیست امروز به آنجا رفتن",
      "ex": ""
     }
    ]
@@ -199,28 +499,183 @@
    "num": 6,
    "items": [
     {
-     "de": "Sie sprechen Englisch",
-     "fa": "شما انگلیسی صحبت می کنید",
+     "de": "es wird nicht möglich sein, es jetzt zu",
+     "fa": "ممکن نخواهد بود، آن را اکنون انجام دادن",
      "ex": ""
     },
     {
-     "de": "auf Deutsch",
-     "fa": "در آلمانی",
+     "de": "tun",
+     "fa": "ممکن نخواهد بود، آن را اکنون انجام دادن",
      "ex": ""
     },
     {
-     "de": "zehn Jahren",
-     "fa": "ده سال ( ها",
+     "de": "aber Ich habe keine Zeit, es jetzt zu",
+     "fa": "اما من وقت ندارم، اکنون آن را انجام بدهم",
      "ex": ""
     },
     {
-     "de": "er arbeitet",
-     "fa": "او کار می کند",
+     "de": "tun",
+     "fa": "اما من وقت ندارم، اکنون آن را انجام بدهم",
      "ex": ""
     },
     {
-     "de": "drei Tagen",
-     "fa": "سه روز ( ها",
+     "de": "ich werde nicht die Zeit haben, heute",
+     "fa": "من وقت نخواهم داشت، امروز آن را انجام بدهم",
+     "ex": ""
+    },
+    {
+     "de": "es zu tun",
+     "fa": "من وقت نخواهم داشت، امروز آن را انجام بدهم",
+     "ex": ""
+    },
+    {
+     "de": "es würde nicht möglich sein, es zu",
+     "fa": "ممکننَبُوَد، انجام دادنش",
+     "ex": ""
+    },
+    {
+     "de": "tun",
+     "fa": "ممکننَبُوَد، انجام دادنش",
+     "ex": ""
+    },
+    {
+     "de": "weil ich keine Zeit haben würde,",
+     "fa": "چون مرا وقت نَبُوَد (چون مرا هیچ وقتی نبود)، امروز آن",
+     "ex": ""
+    },
+    {
+     "de": "heute es zu tun",
+     "fa": "چون مرا وقت نَبُوَد (چون مرا هیچ وقتی نبود)، امروز آن",
+     "ex": ""
+    },
+    {
+     "de": "ich möchte wissen, wann es fertig",
+     "fa": "من دوست دارم بدانم، چه زمانی آنآماده خواهد بود؟",
+     "ex": ""
+    },
+    {
+     "de": "sein wird",
+     "fa": "من دوست دارم بدانم، چه زمانی آنآماده خواهد بود؟",
+     "ex": ""
+    },
+    {
+     "de": "ich will wissen, um wie viel Uhr es",
+     "fa": "من می خواهم بدانم، در چه ساعتی آن آماده خواهد",
+     "ex": ""
+    },
+    {
+     "de": "fertig sein wird",
+     "fa": "من می خواهم بدانم، در چه ساعتی آن آماده خواهد",
+     "ex": ""
+    },
+    {
+     "de": "ich möchte wissen, um wie viel Uhr",
+     "fa": "من دوست دارم بدانم، در چه ساعتی آن آماده خواهد",
+     "ex": ""
+    },
+    {
+     "de": "es fertig sein wird",
+     "fa": "من دوست دارم بدانم، در چه ساعتی آن آماده خواهد",
+     "ex": ""
+    },
+    {
+     "de": "ich möchte wissen, warum es heute",
+     "fa": "من مایلم بدانم، چرا آن امروزنمی تواند آماده باشد",
+     "ex": ""
+    },
+    {
+     "de": "nicht fertig sein kann",
+     "fa": "من مایلم بدانم، چرا آن امروزنمی تواند آماده باشد",
+     "ex": ""
+    },
+    {
+     "de": "ich möchte wissen, wann Sie es tun",
+     "fa": "من دوست دارم بدانم ، چه زمانی شما میخواهید آن را",
+     "ex": ""
+    },
+    {
+     "de": "wollen",
+     "fa": "من دوست دارم بدانم ، چه زمانی شما میخواهید آن را",
+     "ex": ""
+    },
+    {
+     "de": "ich möchte wissen, um wie viel Uhr",
+     "fa": "من مایلم بدانم ، در چه ساعتی او می تواند آن را انجام",
+     "ex": ""
+    },
+    {
+     "de": "er es tun kann",
+     "fa": "من مایلم بدانم ، در چه ساعتی او می تواند آن را انجام",
+     "ex": ""
+    },
+    {
+     "de": "ich werde hier warten, wenn Sie",
+     "fa": "من اینجا منتظر خواهم بود، اگر شما بخواهید",
+     "ex": ""
+    },
+    {
+     "de": "wollen",
+     "fa": "من اینجا منتظر خواهم بود، اگر شما بخواهید",
+     "ex": ""
+    },
+    {
+     "de": "ich werde hier auf Sie warten, wenn",
+     "fa": "من اینجا منتظر شما خواهم بود ، اگر شما بخواهید",
+     "ex": ""
+    },
+    {
+     "de": "Sie wollen",
+     "fa": "من اینجا منتظر شما خواهم بود ، اگر شما بخواهید",
+     "ex": ""
+    },
+    {
+     "de": "ich weiß nicht, ob ich es tun kann,",
+     "fa": "من نمی دانم که آیا من آن را می توانم انجام دهم، اما",
+     "ex": ""
+    },
+    {
+     "de": "aber ich werde versuchen",
+     "fa": "من نمی دانم که آیا من آن را می توانم انجام دهم، اما",
+     "ex": ""
+    },
+    {
+     "de": "ich weiß nicht, ob es möglich ist, es",
+     "fa": "من نمی دانم، که ایا آن ممکن است انجام دادنش، اما من",
+     "ex": ""
+    },
+    {
+     "de": "so zu tun, aber ich werde versuchen",
+     "fa": "من نمی دانم، که ایا آن ممکن است انجام دادنش، اما من",
+     "ex": ""
+    },
+    {
+     "de": "ich weiß nicht, ob es möglich sein",
+     "fa": "من نمی دانم، که آیا آن ممکن خواهد بود، انجام دادنش",
+     "ex": ""
+    },
+    {
+     "de": "wird, es zu tun",
+     "fa": "من نمی دانم، که آیا آن ممکن خواهد بود، انجام دادنش",
+     "ex": ""
+    },
+    {
+     "de": "ich weiß nicht, ob ich die Gelegenheit",
+     "fa": "من نمی دانم که آیا من فرصت خواهم داشت یا نه، امروز",
+     "ex": ""
+    },
+    {
+     "de": "haben werde, heute dorthin zu gehen",
+     "fa": "من نمی دانم که آیا من فرصت خواهم داشت یا نه، امروز",
+     "ex": ""
+    },
+    {
+     "de": "ich wohne hier schon seit zehn",
+     "fa": "من زندگی میکنم اینجا از ده سال پیش",
+     "ex": ""
+    },
+    {
+     "de": "Jahren",
+     "fa": "من زندگی میکنم اینجا از ده سال پیش",
      "ex": ""
     }
    ]
@@ -229,58 +684,113 @@
    "num": 7,
    "items": [
     {
-     "de": "war- waren گذشته",
-     "fa": "sein",
+     "de": "ich werde es morgen kaufen, wenn",
+     "fa": "من آن را فردا خواهم خرید ، اگر من زمان داشته باشم",
      "ex": ""
     },
     {
-     "de": "ich war da gestern Abend",
-     "fa": "من دیروز عصر آنجا بودم",
+     "de": "ich die Zeit habe",
+     "fa": "من آن را فردا خواهم خرید ، اگر من زمان داشته باشم",
      "ex": ""
     },
     {
-     "de": "es war nicht möglich, es zu tun",
-     "fa": "ممکن نبود، آن را انجام دادن",
+     "de": "können Sie mir sagen, ob Sie es tun",
+     "fa": "می توانید شما به من بگویید، که آیا شما آن را می",
      "ex": ""
     },
     {
-     "de": "ich hatte",
-     "fa": "من داشتم",
+     "de": "können",
+     "fa": "می توانید شما به من بگویید، که آیا شما آن را می",
      "ex": ""
     },
     {
-     "de": "ich konnte Sie nicht verstehen",
-     "fa": "من نتوانستم شما را بفهمم",
+     "de": "ich möchte wissen, wann Sie es tun",
+     "fa": "من دوست دارم بدانم ، چه زمانی شما آ نرا انجام",
      "ex": ""
     },
     {
-     "de": "er wird es tun, weil er es tun will",
-     "fa": "او آن را انجام خواهد داد،چون او می خواهد آن را انجام",
+     "de": "werden",
+     "fa": "من دوست دارم بدانم ، چه زمانی شما آ نرا انجام",
      "ex": ""
     },
     {
-     "de": "Sie sollen mir sagen",
-     "fa": "شمامی بایستی به من بگویید",
+     "de": "er konnte gestern Abend nicht mit",
+     "fa": "او نتوانست با ما به آنجا دیروز عصر برود",
      "ex": ""
     },
     {
-     "de": "ich darf",
-     "fa": "من اجازه دارم",
+     "de": "uns dorthin gehen",
+     "fa": "او نتوانست با ما به آنجا دیروز عصر برود",
      "ex": ""
     },
     {
-     "de": "man darf nicht",
-     "fa": "آدم اجازه ندارد",
+     "de": "ich hatte keine Zeit, es zu tun, weil",
+     "fa": "من وقت نداشتم آن را انجام بدهم، چون من خیلی",
      "ex": ""
     },
     {
-     "de": "es wäre nicht möglich",
-     "fa": "آن ممکن نَبود",
+     "de": "ich sehr beschäftigt war",
+     "fa": "من وقت نداشتم آن را انجام بدهم، چون من خیلی",
      "ex": ""
     },
     {
-     "de": "ich muss es reparieren lassen",
-     "fa": "من باید آن را بدهم تعمیر کنند",
+     "de": "ich konnte es gestern ohne Sie nicht",
+     "fa": "من نتوانستم آن را دیروز بدون شما انجام دهم",
+     "ex": ""
+    },
+    {
+     "de": "tun",
+     "fa": "من نتوانستم آن را دیروز بدون شما انجام دهم",
+     "ex": ""
+    },
+    {
+     "de": "er kann es nicht kaufen, weil es sehr",
+     "fa": "او نمی تواند آن را بخرد ، چون آن بسیار گران است",
+     "ex": ""
+    },
+    {
+     "de": "teuer ist",
+     "fa": "او نمی تواند آن را بخرد ، چون آن بسیار گران است",
+     "ex": ""
+    },
+    {
+     "de": "er kann es nicht kaufen, weil es zu",
+     "fa": "او نمی تواند آن را بخرد ، چون آن خیلی گران است",
+     "ex": ""
+    },
+    {
+     "de": "teuer ist",
+     "fa": "او نمی تواند آن را بخرد ، چون آن خیلی گران است",
+     "ex": ""
+    },
+    {
+     "de": "er wollte es kaufen, weil er es haben",
+     "fa": "او می خواست آن را بخرد، چون او آن را می خواست",
+     "ex": ""
+    },
+    {
+     "de": "wollte",
+     "fa": "او می خواست آن را بخرد، چون او آن را می خواست",
+     "ex": ""
+    },
+    {
+     "de": "es wird mich sehr freuen, Sie zu",
+     "fa": "مرابسیار خوشحال خواهد کرد، شما را دیدن",
+     "ex": ""
+    },
+    {
+     "de": "sehen",
+     "fa": "مرابسیار خوشحال خواهد کرد، شما را دیدن",
+     "ex": ""
+    },
+    {
+     "de": "denn es würde nicht möglich sein, es",
+     "fa": "چون ممکن نَبُوَد، آن را انجام دادن",
+     "ex": ""
+    },
+    {
+     "de": "zu tun",
+     "fa": "چون ممکن نَبُوَد، آن را انجام دادن",
      "ex": ""
     }
    ]
@@ -289,43 +799,93 @@
    "num": 8,
    "items": [
     {
-     "de": "ich möchte heute Abend ausgehen",
-     "fa": "من دوست دارم امروز عصر بیرون بروم",
+     "de": "aber ich würde ohne Sie nicht",
+     "fa": "نرومبدون شما دور  اما من",
      "ex": ""
     },
     {
-     "de": "nie wieder بخشد هرگز دوباره",
-     "fa": "( معنای منفی نیز به فعل می",
+     "de": "weggehen",
+     "fa": "نرومبدون شما دور  اما من",
      "ex": ""
     },
     {
-     "de": "weiderholen (جدا نشدنی",
-     "fa": "تکرار کردن",
+     "de": "der Mittag – der Nachmittag- heute",
+     "fa": "وسط ظهر / بعد از ظهر / امروز بعد از ظهر",
      "ex": ""
     },
     {
-     "de": "ich weiderhole",
-     "fa": "من تکرار میکنم",
+     "de": "Nachmittag",
+     "fa": "وسط ظهر / بعد از ظهر / امروز بعد از ظهر",
      "ex": ""
     },
     {
-     "de": "gehen Sie aus, raus بیرون بروید",
-     "fa": "/ .... بیرون",
+     "de": "her",
+     "fa": "من بعدأ با شما تماس میگیرم، به منظور اینکهاز شما",
      "ex": ""
     },
     {
-     "de": "der Anzug لباس (بیشتر به",
-     "fa": "کت و شلوار",
+     "de": "ich rufe Sie später an, um Sie zu",
+     "fa": "من بعدأ با شما تماس میگیرم، به منظور اینکهاز شما",
      "ex": ""
     },
     {
-     "de": "werden Sie mich später anrufen?",
-     "fa": "؟شما بعدا با من",
-     "ex": "( من را ) تماس خواهید گرفت"
+     "de": "fragen, ob Sie heute Abend mit uns",
+     "fa": "من بعدأ با شما تماس میگیرم، به منظور اینکهاز شما",
+     "ex": ""
     },
     {
-     "de": "ich muss ein Glas Weißwein haben",
-     "fa": "من باید یک لیوان شراب سفید داشته باشم",
+     "de": "kommen können",
+     "fa": "من بعدأ با شما تماس میگیرم، به منظور اینکهاز شما",
+     "ex": ""
+    },
+    {
+     "de": "ich hoffe, dass er morgen ankommen",
+     "fa": "رسیدامیدوارم، که او فردا خواهد",
+     "ex": ""
+    },
+    {
+     "de": "wird",
+     "fa": "رسیدامیدوارم، که او فردا خواهد",
+     "ex": ""
+    },
+    {
+     "de": "ich glaube, dass er bald hier sein",
+     "fa": "من بر این باورم که اوبه زودی اینجا خواهد بود",
+     "ex": ""
+    },
+    {
+     "de": "wird",
+     "fa": "من بر این باورم که اوبه زودی اینجا خواهد بود",
+     "ex": ""
+    },
+    {
+     "de": "ich hoffe, dass Sie heute Abend mit",
+     "fa": "میدوارم که شما امروز عصر با ما بتوانید بیاییدا",
+     "ex": ""
+    },
+    {
+     "de": "uns kommen können",
+     "fa": "میدوارم که شما امروز عصر با ما بتوانید بیاییدا",
+     "ex": ""
+    },
+    {
+     "de": "entschuldigen Sie bitte, Verzeihung",
+     "fa": "ببخشید",
+     "ex": ""
+    },
+    {
+     "de": "bitte",
+     "fa": "ببخشید",
+     "ex": ""
+    },
+    {
+     "de": "darf ich Sie fragen, wo ich es finden",
+     "fa": "اجازه دارم ( میشه ) من از شما بپرسم، کجا می توانم آن",
+     "ex": ""
+    },
+    {
+     "de": "kann",
+     "fa": "اجازه دارم ( میشه ) من از شما بپرسم، کجا می توانم آن",
      "ex": ""
     }
    ]
@@ -334,33 +894,148 @@
    "num": 9,
    "items": [
     {
-     "de": "wie lange bleiben Sie hier?",
-     "fa": "چه مدت شما اینجا می مانید؟",
+     "de": "wollen Sie mir sagen, wie lange Sie",
+     "fa": "می خواهید شما به من بگویید، چه مدت شما اینجا",
      "ex": ""
     },
     {
-     "de": "ich werde die Zeitung lesen",
-     "fa": "من روزنامه خواهم خواند",
+     "de": "hier bleiben werden?",
+     "fa": "می خواهید شما به من بگویید، چه مدت شما اینجا",
      "ex": ""
     },
     {
-     "de": "ich will noch etwas",
-     "fa": "من یکم بیشتر می خواهم",
+     "de": "ich möchte wissen, wie lange Sie hier",
+     "fa": "من دوست دارم بدانم ،چه مدت شما اینجا می توانید",
      "ex": ""
     },
     {
-     "de": "er hat es gemacht",
-     "fa": "/ انجام داداو آن را ساخت",
+     "de": "bleiben können?",
+     "fa": "من دوست دارم بدانم ،چه مدت شما اینجا می توانید",
      "ex": ""
     },
     {
-     "de": "ich repariere es",
-     "fa": "من تعمیر می کنم آن را",
+     "de": "ich weiß nicht, wie lange er hier",
+     "fa": "من نمی دانم چه مدت او اینجا خواهد ماند",
      "ex": ""
     },
     {
-     "de": "denn es war sehr teuer",
-     "fa": "چون آن خیلی گران بود",
+     "de": "bleiben wird",
+     "fa": "من نمی دانم چه مدت او اینجا خواهد ماند",
+     "ex": ""
+    },
+    {
+     "de": "ich weiß nicht, wie lange du hier",
+     "fa": "من نمی دانم چه مدت تو اینجا خواهی ماند",
+     "ex": ""
+    },
+    {
+     "de": "bleiben wirst",
+     "fa": "من نمی دانم چه مدت تو اینجا خواهی ماند",
+     "ex": ""
+    },
+    {
+     "de": "Um wie viel Uhr werden Sie hier",
+     "fa": "در چه ساعتی شما اینجا خواهید بود؟",
+     "ex": ""
+    },
+    {
+     "de": "sein?",
+     "fa": "در چه ساعتی شما اینجا خواهید بود؟",
+     "ex": ""
+    },
+    {
+     "de": "du willst/ du kannst/ du möchtest...",
+     "fa": "چون او آن را او آن را به شما نخواهد توانست بگوید،",
+     "ex": ""
+    },
+    {
+     "de": "er wird es Ihnen nicht sagen können,",
+     "fa": "چون او آن را او آن را به شما نخواهد توانست بگوید،",
+     "ex": ""
+    },
+    {
+     "de": "weil er es nicht weiß",
+     "fa": "چون او آن را او آن را به شما نخواهد توانست بگوید،",
+     "ex": ""
+    },
+    {
+     "de": "warum haben Sie es noch nicht",
+     "fa": "چرا شما آن را هنوز نخریده اید؟",
+     "ex": ""
+    },
+    {
+     "de": "gekauft",
+     "fa": "چرا شما آن را هنوز نخریده اید؟",
+     "ex": ""
+    },
+    {
+     "de": "warum hast du es noch nicht",
+     "fa": "چرا تو هنوز آن را نخریده ای؟",
+     "ex": ""
+    },
+    {
+     "de": "gekauft?",
+     "fa": "چرا تو هنوز آن را نخریده ای؟",
+     "ex": ""
+    },
+    {
+     "de": "warum haben Sie es noch nicht",
+     "fa": "چرا شما هنوز آن را نفروختی ؟",
+     "ex": ""
+    },
+    {
+     "de": "verkauft?",
+     "fa": "چرا شما هنوز آن را نفروختی ؟",
+     "ex": ""
+    },
+    {
+     "de": "warum hast du es noch nicht",
+     "fa": "آن را نفروخته ای؟ چرا تو هنوز",
+     "ex": ""
+    },
+    {
+     "de": "verkauft?",
+     "fa": "آن را نفروخته ای؟ چرا تو هنوز",
+     "ex": ""
+    },
+    {
+     "de": "er hat mir gesagt, dass er es nicht tun",
+     "fa": "ندهداو به من گفت، که او آن را انجام",
+     "ex": ""
+    },
+    {
+     "de": "würde",
+     "fa": "ندهداو به من گفت، که او آن را انجام",
+     "ex": ""
+    },
+    {
+     "de": "er hat mir nicht gesagt, dass er es tun",
+     "fa": "او به من نگفت، که او آن را انجام خواهد داد",
+     "ex": ""
+    },
+    {
+     "de": "wird",
+     "fa": "او به من نگفت، که او آن را انجام خواهد داد",
+     "ex": ""
+    },
+    {
+     "de": "ich glaube nicht, dass er mit uns",
+     "fa": "من باور ندارم، که او با ما خواهد آمد",
+     "ex": ""
+    },
+    {
+     "de": "kommen wird",
+     "fa": "من باور ندارم، که او با ما خواهد آمد",
+     "ex": ""
+    },
+    {
+     "de": "ich habe es gesucht, aber ich konnte",
+     "fa": "من آن را جست و جو کردم، اما من نتوانستم آن را پیدا",
+     "ex": ""
+    },
+    {
+     "de": "es nicht finden",
+     "fa": "من آن را جست و جو کردم، اما من نتوانستم آن را پیدا",
      "ex": ""
     }
    ]
@@ -369,58 +1044,303 @@
    "num": 10,
    "items": [
     {
-     "de": "niemand war da",
-     "fa": "هیچ کس آنجا نبود",
+     "de": "er musste hier bleiben, weil er",
+     "fa": "او باید اینجا می ماند، چون او باید کار می کرد",
      "ex": ""
     },
     {
-     "de": "ich werde müde",
-     "fa": "من خسته می شوم",
+     "de": "arbeiten musste",
+     "fa": "او باید اینجا می ماند، چون او باید کار می کرد",
      "ex": ""
     },
     {
-     "de": "Manchmal muss man sich ausruhen بعضی وقت ها",
-     "fa": "آدم باید استراحت کند",
+     "de": "wer war da mit Ihnen gestern",
+     "fa": "چه کسی بود آنجا با شما دیروز عصر؟",
      "ex": ""
     },
     {
-     "de": "er hat es mir geschickt",
-     "fa": "او آن را به من فرستاد",
+     "de": "Abend?",
+     "fa": "چه کسی بود آنجا با شما دیروز عصر؟",
      "ex": ""
     },
     {
-     "de": "es gehört Ihnen",
-     "fa": "آن متعلق به شما است",
+     "de": "wir sind gestern Abend dorthin",
+     "fa": "ما دیروز عصر به آنجا رفتیم",
      "ex": ""
     },
     {
-     "de": "ich erinnere mich",
-     "fa": "من به یاد می آورم",
+     "de": "gegangen",
+     "fa": "ما دیروز عصر به آنجا رفتیم",
      "ex": ""
     },
     {
-     "de": "sich an etwas erinnern",
-     "fa": "بر چیزی به یاد آوردن",
+     "de": "wir sind gestern Abend dort",
+     "fa": "ما دیروز عصر آنجا بودیم",
      "ex": ""
     },
     {
-     "de": "ich tue es seit langer Zeit",
-     "fa": "منآن را از مدت زیادی پیش انجام می دهم",
+     "de": "gewesen?",
+     "fa": "ما دیروز عصر آنجا بودیم",
      "ex": ""
     },
     {
-     "de": "ich heiße ...",
-     "fa": "اسم من ... است",
+     "de": "ich habe Sie nicht gesehen, weil ich",
+     "fa": "من شما را ندیدم چون من آنجا نبودم",
      "ex": ""
     },
     {
-     "de": "Krankenschwester",
-     "fa": "پرستار",
+     "de": "nicht da war/ denn ich war nicht da",
+     "fa": "من شما را ندیدم چون من آنجا نبودم",
      "ex": ""
     },
     {
-     "de": "ich spreche Persisch.",
-     "fa": "من فارسی صحبت می کنم",
+     "de": "wir sind letzte Woche nach Wien",
+     "fa": "ما هفته پیش به وین رفتیم، اما ما خیلی نماندیم، ما فقط",
+     "ex": ""
+    },
+    {
+     "de": "gefahren, aber wir sind nicht lange",
+     "fa": "ما هفته پیش به وین رفتیم، اما ما خیلی نماندیم، ما فقط",
+     "ex": ""
+    },
+    {
+     "de": "geblieben, wir sind nur ein paar Tage",
+     "fa": "ما هفته پیش به وین رفتیم، اما ما خیلی نماندیم، ما فقط",
+     "ex": ""
+    },
+    {
+     "de": "geblieben und wir sind nach London",
+     "fa": "ما هفته پیش به وین رفتیم، اما ما خیلی نماندیم، ما فقط",
+     "ex": ""
+    },
+    {
+     "de": "zurückgekommen",
+     "fa": "ما هفته پیش به وین رفتیم، اما ما خیلی نماندیم، ما فقط",
+     "ex": ""
+    },
+    {
+     "de": "Um wie viel Uhr sind Sie",
+     "fa": "در چه ساعتی شما بیدار شدید؟",
+     "ex": ""
+    },
+    {
+     "de": "aufgestanden_",
+     "fa": "در چه ساعتی شما بیدار شدید؟",
+     "ex": ""
+    },
+    {
+     "de": "Manchmal kann man es nicht",
+     "fa": "بعضی وقت ها آدم نمی تواند آن را بفهمد",
+     "ex": ""
+    },
+    {
+     "de": "verstehen",
+     "fa": "بعضی وقت ها آدم نمی تواند آن را بفهمد",
+     "ex": ""
+    },
+    {
+     "de": "ich habe nicht verstanden, was Sie",
+     "fa": "من نفهمیدم شما چه چیزی گفتید",
+     "ex": ""
+    },
+    {
+     "de": "gesagt haben",
+     "fa": "من نفهمیدم شما چه چیزی گفتید",
+     "ex": ""
+    },
+    {
+     "de": "ich habe Sie heute früh angerufen,",
+     "fa": "من امروز صبح زود با شما تماس گرفتم به منظور اینکه",
+     "ex": ""
+    },
+    {
+     "de": "um Ihnen zu sagen, dass ich heute",
+     "fa": "من امروز صبح زود با شما تماس گرفتم به منظور اینکه",
+     "ex": ""
+    },
+    {
+     "de": "Abend ankommen werde und um 10",
+     "fa": "من امروز صبح زود با شما تماس گرفتم به منظور اینکه",
+     "ex": ""
+    },
+    {
+     "de": "Uhr bei Ihnen sein werde",
+     "fa": "من امروز صبح زود با شما تماس گرفتم به منظور اینکه",
+     "ex": ""
+    },
+    {
+     "de": "ich erinnere mich nicht an meine",
+     "fa": "من کودکی ام را به یاد نمی آورم",
+     "ex": ""
+    },
+    {
+     "de": "Kindheit",
+     "fa": "من کودکی ام را به یاد نمی آورم",
+     "ex": ""
+    },
+    {
+     "de": "ich habe es gesucht, aber ich konnte",
+     "fa": "من به دنبال آن گشتم اما نتوانستم آن را پیدا کنم",
+     "ex": ""
+    },
+    {
+     "de": "es nicht finden",
+     "fa": "من به دنبال آن گشتم اما نتوانستم آن را پیدا کنم",
+     "ex": ""
+    },
+    {
+     "de": "ich weiß nicht, ob ihr mir helfen",
+     "fa": "من نمی دانم که آیا شما به من می توانید کمک کنید یا",
+     "ex": ""
+    },
+    {
+     "de": "könnt",
+     "fa": "من نمی دانم که آیا شما به من می توانید کمک کنید یا",
+     "ex": ""
+    },
+    {
+     "de": "wenn ihr mit mir kommen wollt,",
+     "fa": "اگر شما بخواهید با من بیایید، باید عصر اینجا باشید",
+     "ex": ""
+    },
+    {
+     "de": "müsst ihr am Abend hier sein.",
+     "fa": "اگر شما بخواهید با من بیایید، باید عصر اینجا باشید",
+     "ex": ""
+    },
+    {
+     "de": "er ist hierher gekommen, aber ich",
+     "fa": "او به اینجا آمد، اما مننتوانستم او را ملاقات کنم",
+     "ex": ""
+    },
+    {
+     "de": "konnte ihn nicht treffen",
+     "fa": "او به اینجا آمد، اما مننتوانستم او را ملاقات کنم",
+     "ex": ""
+    },
+    {
+     "de": "ich musste ihm sagen, dass ich keine",
+     "fa": "من باید به او می گفتم که من وقت نداشتم",
+     "ex": ""
+    },
+    {
+     "de": "Zeit hatte.",
+     "fa": "من باید به او می گفتم که من وقت نداشتم",
+     "ex": ""
+    },
+    {
+     "de": "Sie wusste nicht, dass ich auf sie",
+     "fa": "او (مونث) نمی دانست که من منتظر او هستم",
+     "ex": ""
+    },
+    {
+     "de": "warte",
+     "fa": "او (مونث) نمی دانست که من منتظر او هستم",
+     "ex": ""
+    },
+    {
+     "de": "Sie wusste nicht, dass ich mit ihr",
+     "fa": "او نمی دانست که من می خواهمبا او مهاجرت کنم",
+     "ex": ""
+    },
+    {
+     "de": "auswandern möchte.",
+     "fa": "او نمی دانست که من می خواهمبا او مهاجرت کنم",
+     "ex": ""
+    },
+    {
+     "de": "alle wissen, dass die Auswanderung",
+     "fa": "همه می دانند که مهاجرت یک فرصت خوب می تواند",
+     "ex": ""
+    },
+    {
+     "de": "eine gute Gelegenheit sein kann.",
+     "fa": "همه می دانند که مهاجرت یک فرصت خوب می تواند",
+     "ex": ""
+    },
+    {
+     "de": "wo haben Sie Ihr Studium",
+     "fa": "تحصیلاتتان را کجا تمام کردید؟",
+     "ex": ""
+    },
+    {
+     "de": "abgeschloßen?",
+     "fa": "تحصیلاتتان را کجا تمام کردید؟",
+     "ex": ""
+    },
+    {
+     "de": "ich habe mein Studium in Tehran-",
+     "fa": "من تحصیلاتم را در دانشگاه تهران تمام کردم",
+     "ex": ""
+    },
+    {
+     "de": "Universität abgeschloßen",
+     "fa": "من تحصیلاتم را در دانشگاه تهران تمام کردم",
+     "ex": ""
+    },
+    {
+     "de": "ich muss Deutsch lernen, um nach",
+     "fa": "من باید آلمانی یاد بگیرم، به منظور اینکه به آلمان",
+     "ex": ""
+    },
+    {
+     "de": "Deutschland auszuwandern",
+     "fa": "من باید آلمانی یاد بگیرم، به منظور اینکه به آلمان",
+     "ex": ""
+    },
+    {
+     "de": "um nach Deutschland",
+     "fa": "به منظور مهاجرت به سمت آلمان، باید من آلمانی یاد",
+     "ex": ""
+    },
+    {
+     "de": "auszuwandern, muss ich Deutsch",
+     "fa": "به منظور مهاجرت به سمت آلمان، باید من آلمانی یاد",
+     "ex": ""
+    },
+    {
+     "de": "lernen",
+     "fa": "به منظور مهاجرت به سمت آلمان، باید من آلمانی یاد",
+     "ex": ""
+    },
+    {
+     "de": "ich habe angefangen, Deutsch zu",
+     "fa": "من شروع کردم آلمانی یاد بگیرم",
+     "ex": ""
+    },
+    {
+     "de": "lernen",
+     "fa": "من شروع کردم آلمانی یاد بگیرم",
+     "ex": ""
+    },
+    {
+     "de": "ich bin sicher, dass ich diese Sprache",
+     "fa": "منمطمئن هستم که من خیلی سریع این زبان را یاد",
+     "ex": ""
+    },
+    {
+     "de": "sehr schnell lernen werde",
+     "fa": "منمطمئن هستم که من خیلی سریع این زبان را یاد",
+     "ex": ""
+    },
+    {
+     "de": "Jetzt kann ich sagen, dass Deutsch",
+     "fa": "اکنون می توانم بگویم که آلمانی ساده است",
+     "ex": ""
+    },
+    {
+     "de": "einfach ist.",
+     "fa": "اکنون می توانم بگویم که آلمانی ساده است",
+     "ex": ""
+    },
+    {
+     "de": "ich bin sicher, dass ich diese Sprache",
+     "fa": "من مطمئن هستم که من این زبان را خیلی روان",
+     "ex": ""
+    },
+    {
+     "de": "sehr flißend sprechen werde",
+     "fa": "من مطمئن هستم که من این زبان را خیلی روان",
      "ex": ""
     }
    ]
