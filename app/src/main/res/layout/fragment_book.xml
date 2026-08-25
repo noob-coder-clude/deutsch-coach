@@ -1,53 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:fillViewport="true">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:padding="16dp">
-        <!-- Mask toggle row -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="horizontal" android:background="#FFFFFF"
-            android:padding="12dp" android:layout_marginBottom="12dp">
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_weight="1" android:text="👁 پنهان‌کردن ستون آلمانی (خودآزمایی)"
-                android:textSize="12.5sp" android:textStyle="bold" />
-            <View android:id="@+id/mask_sw" android:layout_width="44dp" android:layout_height="25dp"
-                android:background="#D6DEE8" android:layout_marginStart="8dp" />
-        </LinearLayout>
-        <!-- Lektion pills -->
-        <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp">
-            <LinearLayout android:id="@+id/lpills" android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:orientation="horizontal" />
-        </HorizontalScrollView>
-        <!-- Lesson head -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="horizontal" android:background="#BBDEFB"
-            android:padding="16dp" android:layout_marginBottom="12dp">
-            <TextView android:id="@+id/lhead_num" android:layout_width="52dp" android:layout_height="52dp"
-                android:background="#1565C0" android:textColor="#FFFFFF" android:textSize="21sp"
-                android:textStyle="bold" android:gravity="center" android:layout_marginEnd="14dp" />
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView android:id="@+id/lhead_title" android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:textSize="15.5sp"
-                    android:textStyle="bold" android:textColor="#0D47A1" />
-                <TextView android:id="@+id/lhead_desc" android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:textSize="12sp" android:textColor="#5A6B7D" />
-            </LinearLayout>
-        </LinearLayout>
-        <!-- Word list -->
-        <LinearLayout android:id="@+id/word_list" android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:orientation="vertical"
-            android:background="#FFFFFF" android:padding="12dp" android:layout_marginBottom="12dp" />
-        <!-- Prev/Next -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button android:id="@+id/l_prev" android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_weight="1" android:text="قبلی" android:backgroundTint="#F1F5FA" android:textColor="#5A6B7D" />
-            <Button android:id="@+id/l_next" android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_weight="1" android:layout_marginStart="8dp" android:text="بعدی"
-                android:backgroundTint="#1565C0" android:textColor="#FFFFFF" />
-        </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/toggle_hide_de"
+            style="@style/DC.Chip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:text="مخفی‌کردن آلمانی"
+            app:iconGravity="textStart" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/toggle_hide_fa"
+            style="@style/DC.Chip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:text="مخفی‌کردن فارسی" />
     </LinearLayout>
-</ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_prev_row"
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="ردیف قبلی"
+            app:backgroundTint="@color/surface_hi"
+            app:icon="@drawable/ic_chev_down"
+            app:iconTint="@color/text_dim" />
+
+        <TextView
+            android:id="@+id/pos_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:textColor="@color/text_dim"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/total_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_dim"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next_row"
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="ردیف بعدی"
+            app:backgroundTint="@color/surface_hi"
+            app:icon="@drawable/ic_chev_up"
+            app:iconTint="@color/text_dim" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/book_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="18dp" />
+</LinearLayout>

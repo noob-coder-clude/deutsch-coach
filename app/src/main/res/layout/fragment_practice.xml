@@ -1,87 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:fillViewport="true">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:padding="16dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="18dp">
 
-        <!-- Mic practice -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:background="#FFFFFF" android:padding="16dp"
-            android:layout_marginBottom="14dp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="🎤 گفتار: گوش کن، بگو، مقایسه کن" android:textSize="14.5sp"
-                android:textStyle="bold" android:textColor="#1565C0" />
-            <TextView android:id="@+id/ps_fa" android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:textSize="12sp" android:textColor="#5A6B7D"
-                android:layout_marginTop="8dp" />
-            <TextView android:id="@+id/ps_de" android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:textSize="18.5sp" android:textStyle="bold"
-                android:textColor="#0D47A1" android:layout_marginTop="4dp" />
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal" android:layout_marginTop="12dp">
-                <Button android:id="@+id/tts_btn" android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_weight="1" android:text="شنیدن" android:backgroundTint="#1565C0"
-                    android:textColor="#FFFFFF" />
-                <Button android:id="@+id/rec_btn" android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_weight="1" android:layout_marginStart="8dp" android:text="ضبط"
-                    android:backgroundTint="#1565C0" android:textColor="#FFFFFF" />
-                <Button android:id="@+id/play_btn" android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_weight="1" android:layout_marginStart="8dp" android:text="پخش من"
-                    android:backgroundTint="#F1F5FA" android:textColor="#5A6B7D" android:enabled="false" />
-            </LinearLayout>
-            <ProgressBar android:id="@+id/level_bar" style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent" android:layout_height="6dp" android:layout_marginTop="10dp"
-                android:progressTint="#1E88E5" />
-            <TextView android:id="@+id/rec_stat" android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:textSize="12sp" android:textColor="#5A6B7D"
-                android:layout_marginTop="8dp" />
-            <Button android:id="@+id/next_sent" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:text="جملهٔ بعدی" android:layout_marginTop="10dp" android:backgroundTint="#1565C0"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/pr_empty_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <!-- Split game -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:background="#FFFFFF" android:padding="16dp"
-            android:layout_marginBottom="14dp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="🧩 خرد کردن جمله" android:textSize="14.5sp"
-                android:textStyle="bold" android:textColor="#1565C0" />
-            <TextView android:id="@+id/sb_fa" android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:textSize="13sp"
-                android:layout_marginTop="6dp" android:layout_marginBottom="12dp" />
-            <LinearLayout android:id="@+id/sb_slots" android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:orientation="horizontal"
-                android:background="#F5F9FD" android:padding="10dp" android:layout_marginBottom="12dp" />
-            <LinearLayout android:id="@+id/sb_chips" android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:orientation="horizontal"
-                android:layout_marginBottom="12dp" />
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button android:id="@+id/sb_reset" android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_weight="1" android:text="از اول" android:backgroundTint="#F1F5FA"
-                    android:textColor="#5A6B7D" />
-                <Button android:id="@+id/sb_next" android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_weight="1" android:layout_marginStart="8dp" android:text="جملهٔ بعدی"
-                    android:backgroundTint="#1565C0" android:textColor="#FFFFFF" android:enabled="false" />
-            </LinearLayout>
-        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="26dp">
 
-        <!-- SR -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:background="#FFFFFF" android:padding="16dp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="🔄 مرور فاصله‌دار — امروز سرِ وقت" android:textSize="14.5sp"
-                android:textStyle="bold" android:textColor="#1565C0" />
-            <LinearLayout android:id="@+id/srs_today" android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:orientation="vertical"
-                android:layout_marginTop="10dp" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="نوبت‌های بعدی:" android:textSize="12sp" android:textColor="#5A6B7D"
-                android:layout_marginTop="10dp" />
-            <LinearLayout android:id="@+id/srs_next" android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="4dp" />
+            <TextView
+                android:id="@+id/pr_empty_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="6dp"
+                android:textColor="@color/text_dim"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btn_start_review"
+                style="@style/DC.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:layout_marginTop="18dp"
+                android:text="شروع مرور" />
         </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/pr_card"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/pr_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_dim"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/pr_fa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="6dp"
+                android:textColor="@color/text"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="56dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/primary" />
+
+            <TextView
+                android:id="@+id/pr_de"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineSpacingExtra="8dp"
+                android:textColor="@color/primary"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pr_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:textColor="@color/text_dim"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/btn_reveal"
+        style="@style/DC.Button"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:text="نمایش پاسخ" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_hard"
+            style="@style/DC.Button.Outline"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:text="سخت بود" />
+
+        <Button
+            android:id="@+id/btn_easy"
+            style="@style/DC.Button"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:text="آسون بود" />
     </LinearLayout>
-</ScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/pr_done_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:strokeColor="@color/primary"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="26dp">
+
+            <TextView
+                android:id="@+id/done_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_again"
+                style="@style/DC.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:text="بررسی دوباره" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

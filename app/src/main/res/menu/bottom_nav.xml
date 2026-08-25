@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_coach"
+        android:icon="@drawable/ic_nav_coach"
+        android:title="@string/tab_coach" />
+    <item
+        android:id="@+id/nav_placement"
+        android:icon="@drawable/ic_nav_placement"
+        android:title="@string/tab_placement" />
+    <item
+        android:id="@+id/nav_book"
+        android:icon="@drawable/ic_nav_book"
+        android:title="@string/tab_book" />
+    <item
+        android:id="@+id/nav_practice"
+        android:icon="@drawable/ic_nav_practice"
+        android:title="@string/tab_practice" />
+    <item
+        android:id="@+id/nav_progress"
+        android:icon="@drawable/ic_nav_progress"
+        android:title="@string/tab_progress" />
+</menu>

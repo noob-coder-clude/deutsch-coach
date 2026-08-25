@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Deutsch Coach</string>
+    <string name="app_name">دویچ کوچ</string>
+    <string name="tab_coach">مربی</string>
+    <string name="tab_placement">تعیین سطح</string>
+    <string name="tab_book">کتاب</string>
+    <string name="tab_practice">مرور</string>
+    <string name="tab_progress">پیشرفت</string>
 </resources>
