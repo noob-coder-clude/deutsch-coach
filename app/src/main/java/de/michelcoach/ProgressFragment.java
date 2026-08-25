@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import java.util.Set;
+import de.michelcoach.data.CardDao;
 
 public class ProgressFragment extends Fragment {
 
