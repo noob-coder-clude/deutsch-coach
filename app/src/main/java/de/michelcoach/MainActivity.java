@@ -20,7 +20,9 @@ public class MainActivity extends AppCompatActivity {
             show(item.getItemId());
             return true;
         });
-        if (savedInstanceState == null) nav.setSelectedItemId(R.id.nav_coach);
+        if (savedInstanceState == null) {
+            show(R.id.nav_coach);
+        }
     }
 
     public void show(int id) {
