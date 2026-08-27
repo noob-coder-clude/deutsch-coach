@@ -1,39 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:padding="12dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/sw_hide_german"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:text="مخفی‌کردن آلمانی" />
 
-            <com.google.android.material.materialswitch.MaterialSwitch
-                android:id="@+id/sw_hide_german"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="مخفی‌کردن آلمانی" />
-
-            <com.google.android.material.materialswitch.MaterialSwitch
-                android:id="@+id/sw_hide_persian"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="مخفی‌کردن فارسی" />
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_rows"
-            android:layout_width="match_parent"
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/sw_hide_persian"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:nestedScrollingEnabled="false" />
-
+            android:layout_weight="1"
+            android:text="مخفی‌کردن فارسی" />
     </LinearLayout>
-</ScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_rows"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

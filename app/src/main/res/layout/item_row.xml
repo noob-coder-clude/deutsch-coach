@@ -1,32 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="2dp">
+    android:orientation="vertical"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
 
-    <ImageView
-        android:id="@+id/img_row"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY" />
+        android:layout_height="wrap_content">
 
-    <!-- left mask: hides German (left half) -->
-    <View
-        android:id="@+id/mask_left"
-        android:layout_width="150dp"
-        android:layout_height="56dp"
-        android:layout_gravity="start"
-        android:background="@color/blue_900"
-        android:visibility="gone" />
+        <ImageView
+            android:id="@+id/img_de"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart" />
 
-    <!-- right mask: hides Persian (right half) -->
-    <View
-        android:id="@+id/mask_right"
-        android:layout_width="150dp"
-        android:layout_height="56dp"
-        android:layout_gravity="end"
-        android:background="@color/blue_900"
-        android:visibility="gone" />
+        <View
+            android:id="@+id/mask_de"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:visibility="gone" />
+    </FrameLayout>
 
-</FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp">
+
+        <ImageView
+            android:id="@+id/img_fa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart" />
+
+        <View
+            android:id="@+id/mask_fa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>
