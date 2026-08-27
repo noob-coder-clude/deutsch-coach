@@ -16,7 +16,7 @@ public class PlacementFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup c, @Nullable Bundle s) {
         View v = inflater.inflate(R.layout.fragment_placement, c, false);
         TextView tv = v.findViewById(R.id.tv_placement);
-        if (tv != null) tv.setText("آزمون تشخیص برای پیدا کردن نقطهٔ شروع شما در متد میchel توماس.");
+        if (tv != null) tv.setText("آزمون تشخیص برای پیدا کردن نقطهٔ شروع شما در متد میشل توماس.");
         return v;
     }
 }
