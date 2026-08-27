@@ -46,36 +46,19 @@ public class AssetRowAdapter extends RecyclerView.Adapter<AssetRowAdapter.RowHol
     public void onBindViewHolder(@NonNull RowHolder holder, int position) {
         try {
             InputStream is = ctx.getAssets().open(rows.get(position));
-            Bitmap full = BitmapFactory.decodeStream(is);
+            Bitmap bmp = BitmapFactory.decodeStream(is);
             is.close();
-            if (full == null) {
+            if (bmp == null) {
                 holder.img.setVisibility(View.GONE);
                 return;
             }
+            holder.img.setImageBitmap(bmp);
+            holder.img.setVisibility(View.VISIBLE);
 
-            Bitmap toShow;
-            int w = full.getWidth();
-            int h = full.getHeight();
+            // masks (not crop): keep full row visible, hide only one side
+            holder.maskLeft.setVisibility(hideGerman ? View.VISIBLE : View.GONE);
+            holder.maskRight.setVisibility(hidePersian ? View.VISIBLE : View.GONE);
 
-            if (hideGerman && hidePersian) {
-                toShow = null;
-            } else if (hideGerman) {
-                // show only Persian (right half)
-                toShow = Bitmap.createBitmap(full, w / 2, 0, w - w / 2, h);
-            } else if (hidePersian) {
-                // show only German (left half)
-                toShow = Bitmap.createBitmap(full, 0, 0, w / 2, h);
-            } else {
-                // show both
-                toShow = full;
-            }
-
-            if (toShow != null) {
-                holder.img.setImageBitmap(toShow);
-                holder.img.setVisibility(View.VISIBLE);
-            } else {
-                holder.img.setVisibility(View.GONE);
-            }
         } catch (IOException e) {
             holder.img.setVisibility(View.GONE);
         }
@@ -88,9 +71,13 @@ public class AssetRowAdapter extends RecyclerView.Adapter<AssetRowAdapter.RowHol
 
     static class RowHolder extends RecyclerView.ViewHolder {
         ImageView img;
+        View maskLeft;
+        View maskRight;
         RowHolder(@NonNull View v) {
             super(v);
             img = v.findViewById(R.id.img_row);
+            maskLeft = v.findViewById(R.id.mask_left);
+            maskRight = v.findViewById(R.id.mask_right);
         }
     }
 }

@@ -7,7 +7,26 @@
     <ImageView
         android:id="@+id/img_row"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter" />
+        android:scaleType="fitXY" />
+
+    <!-- left mask: hides German (left half) -->
+    <View
+        android:id="@+id/mask_left"
+        android:layout_width="150dp"
+        android:layout_height="56dp"
+        android:layout_gravity="start"
+        android:background="@color/blue_900"
+        android:visibility="gone" />
+
+    <!-- right mask: hides Persian (right half) -->
+    <View
+        android:id="@+id/mask_right"
+        android:layout_width="150dp"
+        android:layout_height="56dp"
+        android:layout_gravity="end"
+        android:background="@color/blue_900"
+        android:visibility="gone" />
+
 </FrameLayout>
