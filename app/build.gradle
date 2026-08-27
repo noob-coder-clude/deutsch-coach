@@ -10,8 +10,8 @@ android {
         applicationId "de.macht.app"
         minSdk 28
         targetSdk 34
-        versionCode 212
-        versionName "2.1.2"
+        versionCode 213
+        versionName "2.1.3"
         multiDexEnabled true
     }
 
