@@ -46,10 +46,32 @@ public class AssetRowAdapter extends RecyclerView.Adapter<AssetRowAdapter.RowHol
     public void onBindViewHolder(@NonNull RowHolder holder, int position) {
         try {
             InputStream is = ctx.getAssets().open(rows.get(position));
-            Bitmap bmp = BitmapFactory.decodeStream(is);
+            Bitmap full = BitmapFactory.decodeStream(is);
             is.close();
-            if (bmp != null) {
-                holder.img.setImageBitmap(bmp);
+            if (full == null) {
+                holder.img.setVisibility(View.GONE);
+                return;
+            }
+
+            Bitmap toShow;
+            int w = full.getWidth();
+            int h = full.getHeight();
+
+            if (hideGerman && hidePersian) {
+                toShow = null;
+            } else if (hideGerman) {
+                // show only Persian (right half)
+                toShow = Bitmap.createBitmap(full, w / 2, 0, w - w / 2, h);
+            } else if (hidePersian) {
+                // show only German (left half)
+                toShow = Bitmap.createBitmap(full, 0, 0, w / 2, h);
+            } else {
+                // show both
+                toShow = full;
+            }
+
+            if (toShow != null) {
+                holder.img.setImageBitmap(toShow);
                 holder.img.setVisibility(View.VISIBLE);
             } else {
                 holder.img.setVisibility(View.GONE);

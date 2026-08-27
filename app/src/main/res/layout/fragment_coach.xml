@@ -7,19 +7,70 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@drawable/ic_launcher_foreground"
+            android:backgroundTint="@color/blue_700"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deutsch Coach"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="یادگیری آلمانی با متد میشل توماس"
+                android:textSize="14sp"
+                android:textColor="@color/blue_50"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/pledge_title"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/blue_900" />
+            android:textColor="@color/blue_900"
+            android:layout_marginTop="20dp" />
+
         <TextView
             android:id="@+id/tv_pledge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:textColor="@color/gray_900"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="انتخاب لکسیون"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue_900"
+            android:layout_marginTop="24dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="لکسیون ۱"
+            android:layout_marginTop="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="لکسیون ۲"
+            android:layout_marginTop="8dp" />
+
     </LinearLayout>
 </ScrollView>
