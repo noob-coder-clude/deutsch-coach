@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Deutsch Coach</string>
+    <string name="tab_coach">مربی</string>
+    <string name="tab_placement">تشخیص</string>
+    <string name="tab_book">جزوه</string>
+    <string name="tab_practice">تمرین</string>
+    <string name="tab_progress">پیشرفت</string>
+    <string name="hide_german">مخفی‌کردن آلمانی</string>
+    <string name="hide_persian">مخفی‌کردن فارسی</string>
+    <string name="mark_hard">برای من سخت بود</string>
+    <string name="pledge_title">تعهد من</string>
+    <string name="pledge_text">من متعهد می‌شوم که در یادگیری آلمانی از مترجم استفاده نکنم و تمرین‌ها را خودم انجام دهم.</string>
+    <string name="start_practice">شروع تمرین</string>
+    <string name="next">بعدی</string>
+    <string name="speak">شنیدن</string>
+    <string name="record">ضبط</string>
+    <string name="repeat_done">تکرار انجام شد</string>
 </resources>

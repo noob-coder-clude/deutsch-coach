@@ -1,67 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:fillViewport="true">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:padding="16dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="horizontal" android:layout_marginBottom="14dp">
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_weight="1" android:orientation="vertical" android:background="#FFFFFF"
-                android:padding="14dp" android:layout_marginEnd="5dp">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="🔥" android:textSize="21sp" />
-                <TextView android:id="@+id/st_streak" android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:text="۴" android:textSize="20sp"
-                    android:textStyle="bold" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="روز پیوسته" android:textSize="10sp" android:textColor="#5A6B7D" />
-            </LinearLayout>
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_weight="1" android:orientation="vertical" android:background="#FFFFFF"
-                android:padding="14dp" android:layout_marginEnd="5dp">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="📚" android:textSize="21sp" />
-                <TextView android:id="@+id/st_words" android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:text="۰" android:textSize="20sp"
-                    android:textStyle="bold" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="کلمه در جیب" android:textSize="10sp" android:textColor="#5A6B7D" />
-            </LinearLayout>
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                android:layout_weight="1" android:orientation="vertical" android:background="#FFFFFF"
-                android:padding="14dp">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="⏱" android:textSize="21sp" />
-                <TextView android:id="@+id/st_min" android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:text="۴۷" android:textSize="20sp"
-                    android:textStyle="bold" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="دقیقه تمرین" android:textSize="10sp" android:textColor="#5A6B7D" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Calendar -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:background="#FFFFFF" android:padding="16dp"
-            android:layout_marginBottom="14dp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="📅 ۳۰ روز گذشته" android:textSize="14.5sp"
-                android:textStyle="bold" android:textColor="#1565C0" />
-            <GridLayout android:id="@+id/cal_grid" android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:columnCount="10"
-                android:layout_marginTop="10dp" />
-        </LinearLayout>
-
-        <!-- Achievements -->
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:background="#FFFFFF" android:padding="16dp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="🏆 نشان‌ها" android:textSize="14.5sp"
-                android:textStyle="bold" android:textColor="#1565C0" />
-            <LinearLayout android:id="@+id/ach_grid" android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:orientation="horizontal"
-                android:layout_marginTop="10dp" />
-        </LinearLayout>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/gray_900" />
     </LinearLayout>
 </ScrollView>
